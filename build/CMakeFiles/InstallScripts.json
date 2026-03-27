@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/deepak/Data/planning/build/cmake_install.cmake",
+		"/home/deepak/Data/planning/build/planners/cpp/cmake_install.cmake",
+		"/home/deepak/Data/planning/build/_deps/cppzmq-build/cmake_install.cmake",
+		"/home/deepak/Data/planning/build/_deps/nlohmann_json-build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

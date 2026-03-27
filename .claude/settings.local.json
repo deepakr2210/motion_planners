@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 --version)",
+      "Read(//home/deepak/.local/bin/**)",
+      "Bash(curl -LsSf https://astral.sh/uv/install.sh)",
+      "Bash(sh)",
+      "Bash(export PATH=\"$HOME/.local/bin:$HOME/snap/code/229/.local/share/../bin:$PATH\")",
+      "Bash(uv --version)",
+      "Bash(uv sync:*)",
+      "Bash(uv run python -c \":*)"
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/cpp_planner.dir/src/main.cpp.o -o cpp_planner  -lzmq /usr/lib/x86_64-linux-gnu/libzmq.so

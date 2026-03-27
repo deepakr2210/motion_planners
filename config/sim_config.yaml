@@ -1,0 +1,41 @@
+sim:
+  model_path: "models/franka_panda/scene.xml"
+  timestep: 0.002       # physics step [s]
+  render: true          # launch MuJoCo viewer
+  realtime: true        # throttle sim to wall-clock speed
+  state_hz: 100         # state publish rate [Hz]
+
+  # Internal PD gains used inside the sim when cmd mode = "position".
+  # These run at full physics rate (500 Hz) so they can be much stiffer
+  # than the external controller gains below.
+  position_servo:
+    kp: [4500.0, 4500.0, 3500.0, 3500.0, 2000.0, 2000.0, 2000.0]
+    kd: [450.0,  450.0,  350.0,  350.0,  200.0,  200.0,  200.0]
+
+zmq:
+  # Bind addresses (used by the sim process)
+  state_pub_addr: "tcp://*:5555"   # sim  → all      (STATE)
+  cmd_pull_addr:  "tcp://*:5556"   # ctrl → sim       (CMD)
+  traj_pub_addr:  "tcp://*:5557"   # plan → ctrl      (TRAJ)
+
+  # Connect addresses (used by controller / planner processes)
+  state_sub_addr: "tcp://localhost:5555"
+  cmd_push_addr:  "tcp://localhost:5556"
+  traj_sub_addr:  "tcp://localhost:5557"
+
+robot:
+  name:   "franka_panda"
+  ndof:   7
+  # Standard Franka ready pose [rad]
+  home_q: [0.0, -0.785, 0.0, -2.356, 0.0, 1.571, 0.785]
+
+controller:
+  rate_hz: 100
+  # PD gains used by the controller process for torque-mode trajectory tracking
+  kp: [600.0, 600.0, 600.0, 600.0, 250.0, 150.0, 50.0]
+  kd: [50.0,  50.0,  50.0,  50.0,  30.0,  25.0,  15.0]
+
+planner:
+  rate_hz:          10    # re-plan rate [Hz]
+  trajectory_dt:    0.02  # waypoint spacing [s]
+  default_duration: 4.0   # default move duration [s]

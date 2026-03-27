@@ -1,0 +1,27 @@
+[project]
+name = "trajopt-planning"
+version = "0.1.0"
+description = "Trajectory optimization planning with MuJoCo and ZeroMQ IPC"
+requires-python = ">=3.10"
+dependencies = [
+    "mujoco>=3.1.0",
+    "pyzmq>=25.1.0",
+    "numpy>=1.26.0",
+    "scipy>=1.11.0",
+    "pyyaml>=6.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.8.0",
+    "ipython>=8.0.0",
+    "pytest>=7.4.0",
+]
+
+[tool.uv]
+package = false
+
+[project.scripts]
+sim    = "sim.mujoco_sim:main"
+ctrl   = "control.controller:main"
+plan   = "planners.python.planner:main"

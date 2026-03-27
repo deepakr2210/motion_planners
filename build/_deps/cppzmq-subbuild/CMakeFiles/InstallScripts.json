@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/deepak/Data/planning/build/_deps/cppzmq-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
