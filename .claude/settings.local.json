@@ -8,7 +8,15 @@
       "Bash(export PATH=\"$HOME/.local/bin:$HOME/snap/code/229/.local/share/../bin:$PATH\")",
       "Bash(uv --version)",
       "Bash(uv sync:*)",
-      "Bash(uv run python -c \":*)"
+      "Bash(uv run python -c \":*)",
+      "Bash(find /home/deepak/Data/planning/.venv -name libmujoco*)",
+      "Bash(python3 -c \"import sys; sys.path.insert\\(0,''''/home/deepak/Data/planning/.venv/lib/python3.11/site-packages''''\\); import mujoco, os; print\\(os.path.dirname\\(mujoco.__file__\\)\\)\")",
+      "Bash(uv run:*)",
+      "Bash(mv models:*)",
+      "Bash(mkdir -p scenes/franka_panda)",
+      "Bash(mv assets/franka_panda/scene.xml scenes/franka_panda/)",
+      "Bash(mv assets/franka_panda/scene_with_obstacles.xml scenes/franka_panda/)",
+      "Bash(mv assets/scene_with_obstacles.xml scenes/)"
     ]
   }
 }

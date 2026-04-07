@@ -1,5 +1,5 @@
 sim:
-  model_path: "models/franka_panda/scene.xml"
+  model_path: "assets/mujoco_menagerie/franka_emika_panda/scene.xml"
   timestep: 0.002       # physics step [s]
   render: true          # launch MuJoCo viewer
   realtime: true        # throttle sim to wall-clock speed

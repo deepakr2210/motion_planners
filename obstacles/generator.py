@@ -1,0 +1,186 @@
+"""
+Obstacle generator — randomly places collision spheres in the Panda workspace.
+
+Outputs
+-------
+  obstacles/data.yaml                          sphere centres + radii (loaded by CollisionChecker)
+  assets/mujoco_menagerie/franka_emika_panda/scene_with_obstacles.xml  MuJoCo scene ready for the sim
+
+Usage
+-----
+  uv run python -m obstacles.generator
+  uv run python -m obstacles.generator --config config/obstacles_config.yaml
+  uv run python -m obstacles.generator --seed 7 --num 15
+"""
+
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+from dataclasses import dataclass, asdict
+
+import numpy as np
+import yaml
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+
+# ── Approximate per-link bounding radii for Franka Panda (home-config check) ─
+# Indices match MuJoCo body IDs 1-8 (link0 .. hand)
+_LINK_BOUNDING_RADII = [0.10, 0.09, 0.09, 0.09, 0.07, 0.07, 0.06, 0.06]
+
+# Approximate link positions in the home configuration
+# q_home = [0, -π/4, 0, -3π/4*... see keyframe]  — used for rough rejection
+_HOME_Q = np.array([0.0, -0.785398, 0.0, -2.356194, 0.0, 1.570796, 0.785398])
+
+
+@dataclass
+class Sphere:
+    center: list[float]   # [x, y, z]
+    radius: float
+
+
+def _home_link_positions() -> list[np.ndarray]:
+    """
+    Approximate Panda link frame origins at home configuration using
+    simplified FK (close enough for obstacle rejection, not exact).
+    """
+    import mujoco
+    model_path = ROOT / "assets" / "mujoco_menagerie" / "franka_emika_panda" / "scene.xml"
+    m = mujoco.MjModel.from_xml_path(str(model_path))
+    d = mujoco.MjData(m)
+    key = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_KEY, "home")
+    if key >= 0:
+        mujoco.mj_resetDataKeyframe(m, d, key)
+    mujoco.mj_kinematics(m, d)
+    # body 0 = world, 1..nbody-1 = robot bodies
+    return [np.array(d.xpos[b]) for b in range(1, m.nbody)]
+
+
+def _sphere_collides_with_home(sphere: Sphere, link_positions: list[np.ndarray]) -> bool:
+    c = np.array(sphere.center)
+    for i, lp in enumerate(link_positions):
+        lr = _LINK_BOUNDING_RADII[i] if i < len(_LINK_BOUNDING_RADII) else 0.07
+        if np.linalg.norm(c - lp) < sphere.radius + lr:
+            return True
+    return False
+
+
+def generate(cfg: dict, seed: int | None = None, num: int | None = None) -> list[Sphere]:
+    ocfg     = cfg["obstacles"]
+    n        = num if num is not None else ocfg["num_spheres"]
+    rng_seed = seed if seed is not None else ocfg.get("seed")
+    rng      = np.random.default_rng(rng_seed)
+
+    r_min   = ocfg["radius_min"]
+    r_max   = ocfg["radius_max"]
+    ws      = ocfg["workspace"]
+    x_range = ws["x"]
+    y_range = ws["y"]
+    z_range = ws["z"]
+    base_cl = ocfg["base_clearance"]
+    check_home = ocfg.get("check_home_collision", True)
+
+    link_positions = _home_link_positions() if check_home else []
+
+    spheres: list[Sphere] = []
+    max_attempts = n * 200
+
+    for _ in range(max_attempts):
+        if len(spheres) >= n:
+            break
+
+        cx = rng.uniform(*x_range)
+        cy = rng.uniform(*y_range)
+        cz = rng.uniform(*z_range)
+        r  = rng.uniform(r_min, r_max)
+
+        # Reject if too close to the robot base column
+        if np.sqrt(cx**2 + cy**2) < base_cl:
+            continue
+
+        sp = Sphere(center=[round(cx, 4), round(cy, 4), round(cz, 4)],
+                    radius=round(r, 4))
+
+        # Reject if sphere overlaps home configuration
+        if check_home and _sphere_collides_with_home(sp, link_positions):
+            continue
+
+        spheres.append(sp)
+
+    if len(spheres) < n:
+        print(f"[generator] warning: only placed {len(spheres)}/{n} spheres "
+              f"(workspace too constrained or home-collision filter too aggressive)")
+    else:
+        print(f"[generator] placed {len(spheres)} spheres")
+
+    return spheres
+
+
+def write_data_yaml(spheres: list[Sphere], path: Path) -> None:
+    data = {"obstacles": [asdict(s) for s in spheres]}
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w") as f:
+        yaml.dump(data, f, default_flow_style=False, sort_keys=False)
+    print(f"[generator] wrote {path}")
+
+
+def write_scene_xml(spheres: list[Sphere], cfg: dict, out_path: Path) -> None:
+    """
+    Write a complete MuJoCo scene XML with Panda + obstacle spheres.
+
+    Output: assets/mujoco_menagerie/franka_emika_panda/scene_with_obstacles.xml
+    Must live in the same directory as scene.xml so mesh paths resolve correctly.
+    """
+    rgba = cfg["obstacles"].get("rgba", [0.85, 0.2, 0.1, 0.55])
+    rgba_str = " ".join(str(v) for v in rgba)
+
+    geoms = "\n".join(
+        f'    <geom name="obs_{i}" type="sphere" size="{s.radius:.4f}" '
+        f'pos="{s.center[0]:.4f} {s.center[1]:.4f} {s.center[2]:.4f}" '
+        f'rgba="{rgba_str}" contype="1" conaffinity="1" group="2"/>'
+        for i, s in enumerate(spheres)
+    )
+
+    xml = f"""<!-- Auto-generated by obstacles/generator.py — do not edit by hand. -->
+<mujoco model="panda_with_obstacles">
+
+  <!-- Base scene: floor, lighting, Franka Panda -->
+  <include file="scene.xml"/>
+
+  <!-- Obstacle spheres -->
+  <worldbody>
+{geoms}
+  </worldbody>
+
+</mujoco>
+"""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(xml)
+    print(f"[generator] wrote {out_path}")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Generate random collision spheres")
+    parser.add_argument("--config", default=str(ROOT / "config/obstacles_config.yaml"))
+    parser.add_argument("--seed",   type=int, default=None, help="Override RNG seed")
+    parser.add_argument("--num",    type=int, default=None, help="Override sphere count")
+    args = parser.parse_args()
+
+    with open(args.config) as f:
+        cfg = yaml.safe_load(f)
+
+    spheres = generate(cfg, seed=args.seed, num=args.num)
+
+    write_data_yaml(spheres, ROOT / "obstacles" / "data.yaml")
+    write_scene_xml(spheres, cfg,
+                    ROOT / "assets" / "mujoco_menagerie" / "franka_emika_panda" / "scene_with_obstacles.xml")
+
+    print("[generator] done — launch with:")
+    print("  bash launch.sh python --scene assets/mujoco_menagerie/franka_emika_panda/scene_with_obstacles.xml")
+
+
+if __name__ == "__main__":
+    main()

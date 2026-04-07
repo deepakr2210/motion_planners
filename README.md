@@ -43,11 +43,13 @@ planning/
 ├── launch.sh                   # One-shot launcher for all three processes
 │
 ├── config/
-│   └── sim_config.yaml         # All tuneable parameters (rates, ZMQ ports, PD gains)
+│   ├── sim_config.yaml         # All tuneable parameters (rates, ZMQ ports, PD gains)
+│   └── obstacles_config.yaml   # Obstacle generation parameters (count, bounds, radii)
 │
 ├── models/
 │   └── franka_panda/           # Official mujoco_menagerie Franka Panda model
-│       ├── scene.xml           # Entry point: floor + lights + includes panda.xml
+│       ├── scene.xml           # Base entry point: floor + lights + panda (no obstacles)
+│       ├── scene_with_obstacles.xml  # Generated: scene.xml + obstacle spheres
 │       ├── panda.xml           # 7-DoF arm with torque actuators + home keyframe
 │       └── assets/             # 67 OBJ/STL mesh files
 │
@@ -73,6 +75,11 @@ planning/
 │
 ├── control/
 │   └── controller.py           # Controller process
+│
+├── obstacles/
+│   ├── generator.py            # Random sphere generator → writes data.yaml + scene XML
+│   ├── collision_checker.py    # Python CollisionChecker (point + config queries)
+│   └── data.yaml               # Generated obstacle data (loaded by both checkers)
 │
 └── scripts/
     └── setup_cpp_deps.sh       # Install libzmq3-dev and build tools (apt)
@@ -357,6 +364,123 @@ The controller and sim are **planner-agnostic** — only the ZMQ wire format nee
 
 ---
 
+## Collision obstacles
+
+### Generating a random obstacle scene
+
+```bash
+# Default (10 spheres, seed 42, workspace bounds from obstacles_config.yaml)
+uv run python -m obstacles.generator
+
+# Override count and seed
+uv run python -m obstacles.generator --num 15 --seed 7
+
+# Custom config file
+uv run python -m obstacles.generator --config config/obstacles_config.yaml
+```
+
+Outputs:
+- `obstacles/data.yaml` — sphere centres and radii consumed by both checkers.
+- `models/franka_panda/scene_with_obstacles.xml` — drop-in replacement for `scene.xml`.
+
+Launch the sim with obstacles:
+
+```bash
+bash launch.sh python --scene models/franka_panda/scene_with_obstacles.xml
+```
+
+Tune generation in `config/obstacles_config.yaml`:
+
+```yaml
+obstacles:
+  num_spheres: 10
+  seed: 42
+  radius_min: 0.04
+  radius_max: 0.10
+  workspace:
+    x: [-0.65, 0.65]
+    y: [-0.65, 0.65]
+    z: [0.15,  1.05]
+  base_clearance: 0.20      # reject spheres too close to the robot base
+  check_home_collision: true # reject spheres overlapping the home config
+```
+
+### Python collision checker — `obstacles/collision_checker.py`
+
+```python
+import mujoco
+from obstacles import CollisionChecker
+
+m  = mujoco.MjModel.from_xml_path("models/franka_panda/scene_with_obstacles.xml")
+d  = mujoco.MjData(m)
+cc = CollisionChecker.from_yaml("obstacles/data.yaml", model=m, data=d)
+```
+
+**Workspace point query** (no MuJoCo required, O(n)):
+
+```python
+cc.is_point_in_collision([0.3, 0.2, 0.5])   # → bool
+cc.point_min_clearance([0.3, 0.2, 0.5])     # → float [m], negative = inside obstacle
+```
+
+**Joint-space config query:**
+
+```python
+q = [0.0, -0.785, 0.0, -2.356, 0.0, 1.571, 0.785]
+
+# Approximate (fast): FK → check link bounding spheres vs obstacles
+cc.is_config_in_collision(q, approximate=True)
+
+# Exact (slower): full mj_forward → inspect contact count
+cc.is_config_in_collision(q, approximate=False)
+
+# Signed clearance [m] (negative = collision)
+cc.config_min_clearance(q)
+```
+
+**Batch / planning helpers:**
+
+```python
+import numpy as np
+configs = np.random.uniform(-1.5, 1.5, (1000, 7))
+
+# Boolean array (K,)
+mask = cc.are_configs_in_collision(configs, approximate=True)
+
+# Return only collision-free rows
+free_configs = cc.filter_free_configs(configs, approximate=True)
+```
+
+### C++ collision checker — `planners/cpp/include/collision_checker.hpp`
+
+Header-only. Requires Eigen3, yaml-cpp, and the MuJoCo C API (all wired up in `CMakeLists.txt`).
+
+```cpp
+#include "collision_checker.hpp"
+
+// Load obstacles from YAML
+auto cc = CollisionChecker::fromYaml("obstacles/data.yaml");
+
+// Workspace point query (no MuJoCo)
+Eigen::Vector3d p(0.3, 0.2, 0.5);
+bool hit       = cc.isPointInCollision(p);
+double margin  = cc.pointMinClearance(p);   // negative = inside
+
+// Approximate config query: FK + bounding spheres (fast, for planning loops)
+std::vector<double> q = {0.0, -0.785, 0.0, -2.356, 0.0, 1.571, 0.785};
+bool approx = cc.isConfigInCollision(q, model, data);
+double clr  = cc.configMinClearance(q, model, data);
+
+// Exact config query: full mj_forward + contact count
+bool exact  = cc.isConfigInCollisionExact(q, model, data);
+```
+
+State (`qpos`, `qvel`) is **always saved and restored** by RAII inside the checker — safe to call in a planning loop without corrupting the sim state.
+
+The approximate check (`isConfigInCollision`) runs `mj_kinematics` only (no contact solving) and checks body-frame origins against obstacles using conservative link bounding radii. Use this in inner planning loops. Switch to `isConfigInCollisionExact` for final path validation.
+
+---
+
 ## Dependencies
 
 ### Python
@@ -376,5 +500,8 @@ Managed by uv via `pyproject.toml`:
 | Library | Source |
 |---------|--------|
 | `libzmq` | System (`apt install libzmq3-dev`) |
-| `cppzmq` | Downloaded by CMake FetchContent |
-| `nlohmann/json` | Downloaded by CMake FetchContent |
+| `Eigen3` | System (`apt install libeigen3-dev`) |
+| `cppzmq` | CMake FetchContent |
+| `nlohmann/json` | CMake FetchContent |
+| `yaml-cpp` | CMake FetchContent |
+| `mujoco` (C API) | Resolved automatically from the Python venv by CMake |

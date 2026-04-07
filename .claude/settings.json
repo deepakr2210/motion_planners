@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.h$|\\\\.cc$|\\\\.cpp$\")",
+      "Bash(python3 -c \":*)",
+      "WebFetch(domain:mujoco.org)",
+      "WebSearch",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(ls /home/deepak/Data/planning/assets/franka_panda/*.xml)",
+      "Read(//tmp/**)"
+    ],
+    "additionalDirectories": [
+      "/home/deepak/Data/planning/go2_ilqr/models",
+      "/tmp"
+    ]
+  }
+}
