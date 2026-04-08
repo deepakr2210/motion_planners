@@ -11,10 +11,6 @@ Reads the control mode from the active trajectory and acts accordingly:
               The sim runs its own internal PD servo at full physics rate.
               sends CommandMsg(mode="position", values=q_des)
 
-  "kinematic" Forwards desired joint positions as a teleport command.
-              The sim writes qpos directly — no physics.
-              sends CommandMsg(mode="kinematic", values=q_des)
-
 Subscribes:
   STATE on port 5555  (from sim)
   TRAJ  on port 5557  (from planner)
@@ -40,7 +36,7 @@ import zmq
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from messages.types  import StateMsg, TrajectoryMsg, CommandMsg, Waypoint, MODE_TORQUE, MODE_POSITION, MODE_KINEMATIC
+from messages.types  import StateMsg, TrajectoryMsg, CommandMsg, Waypoint, MODE_TORQUE, MODE_POSITION
 from messages.topics import STATE, TRAJ
 from messages.protocol import decode_state, decode_traj, encode_cmd
 
@@ -166,10 +162,6 @@ def main() -> None:
         elif mode == MODE_POSITION:
             # Forward desired positions — sim runs its own PD at physics rate
             cmd = CommandMsg(values=q_des.tolist(), mode=MODE_POSITION)
-
-        elif mode == MODE_KINEMATIC:
-            # Forward desired positions as a teleport
-            cmd = CommandMsg(values=q_des.tolist(), mode=MODE_KINEMATIC)
 
         else:
             # Unknown mode — default to torque hold

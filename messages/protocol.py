@@ -32,8 +32,8 @@ import json
 from dataclasses import asdict
 from typing import Any
 
-from .types  import StateMsg, TrajectoryMsg, CommandMsg, Waypoint
-from .topics import TopicSpec, TOPICS, STATE, TRAJ, CMD
+from .types  import StateMsg, TrajectoryMsg, CommandMsg, Waypoint, Twist
+from .topics import TopicSpec, TOPICS, STATE, TRAJ, CMD, TWIST
 
 
 # ── Encode ───────────────────────────────────────────────────────────────────
@@ -59,6 +59,9 @@ def decode(spec: TopicSpec, raw: bytes) -> Any:
     if spec.msg_type is CommandMsg:
         return CommandMsg(**d)
 
+    if spec.msg_type is Twist:
+        return Twist(**d)
+
     raise ValueError(f"No decoder registered for topic '{spec.name}'")
 
 
@@ -71,3 +74,6 @@ def encode_cmd(msg: CommandMsg)       -> list[bytes]: return encode(CMD,   msg)
 def decode_state(raw: bytes)          -> StateMsg:       return decode(STATE, raw)
 def decode_traj(raw: bytes)           -> TrajectoryMsg:  return decode(TRAJ,  raw)
 def decode_cmd(raw: bytes)            -> CommandMsg:     return decode(CMD,   raw)
+
+def encode_twist(msg: Twist)          -> list[bytes]: return encode(TWIST, msg)
+def decode_twist(raw: bytes)          -> Twist:       return decode(TWIST, raw)

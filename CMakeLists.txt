@@ -3,3 +3,4 @@ project(trajopt_planning LANGUAGES CXX)
 
 # Build the C++ planner
 add_subdirectory(planners/cpp)
+add_subdirectory(control/cpp)

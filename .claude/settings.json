@@ -11,7 +11,8 @@
     ],
     "additionalDirectories": [
       "/home/deepak/Data/planning/go2_ilqr/models",
-      "/tmp"
+      "/tmp",
+      "/home/deepak/Data/planning/control"
     ]
   }
 }

@@ -1,0 +1,48 @@
+Diff IK Control — Terminal Commands
+=====================================
+Start in order. Each command runs in its own terminal.
+
+──────────────────────────────────────────────
+TERMINAL 1 — MuJoCo Simulation (Franka Panda)
+──────────────────────────────────────────────
+cd /home/deepak/Data/planning
+uv run python -m sim.mujoco_sim
+
+  Options:
+    uv run python -m sim.mujoco_sim --no-render   # headless
+
+──────────────────────────────────────────────
+TERMINAL 2 — Diff IK Node (Franka Panda)
+──────────────────────────────────────────────
+cd /home/deepak/Data/planning
+uv run python scripts/test_diff_ik.py
+
+  Loads the Franka model, wires DiffIKControl to ZMQ.
+  Subscribes: STATE (5555), TWIST (5558)
+  Publishes:  CMD   (5556)
+
+──────────────────────────────────────────────
+TERMINAL 3 — Twist Publisher
+──────────────────────────────────────────────
+cd /home/deepak/Data/planning
+uv run python tasks/draw_circle.py
+
+  Default: move EE upward +Z at 5 cm/s for 5 seconds, then stop.
+
+  Options:
+    --vx --vy --vz   linear velocity  [m/s]
+    --wx --wy --wz   angular velocity [rad/s]
+    --duration 8     run for 8 seconds
+    --rate-hz 50     publish rate
+
+  Examples:
+    uv run python scripts/draw_circle.py --vz 0.05 --duration 8
+    uv run python scripts/draw_circle.py --vx 0.03 --wz 0.2
+    uv run python scripts/draw_circle.py --vz -0.05
+
+──────────────────────────────────────────────
+ZMQ Topic Map
+──────────────────────────────────────────────
+  sim        PUB  tcp://*:5555  →  STATE  (q, qd, qfrc_bias)
+  sim        PULL tcp://*:5556  ←  CMD    (desired joint positions)
+  draw_circle  PUB  tcp://*:5558  →  TWIST  (vx, vy, vz, wx, wy, wz)

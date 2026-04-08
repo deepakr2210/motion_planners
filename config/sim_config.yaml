@@ -1,5 +1,5 @@
 sim:
-  model_path: "assets/mujoco_menagerie/franka_emika_panda/scene.xml"
+  model_path: "scenes/panda_base.xml"
   timestep: 0.002       # physics step [s]
   render: true          # launch MuJoCo viewer
   realtime: true        # throttle sim to wall-clock speed
@@ -22,8 +22,13 @@ zmq:
   state_sub_addr: "tcp://localhost:5555"
   cmd_push_addr:  "tcp://localhost:5556"
   traj_sub_addr:  "tcp://localhost:5557"
+  twist_sub_addr: "tcp://localhost:5558"
+
+  # Bind address (used by twist publisher, e.g. test scripts)
+  twist_pub_addr: "tcp://*:5558"
 
 robot:
+  robot_path: "assets/mujoco_menagerie/franka_emika_panda/panda.xml"
   name:   "franka_panda"
   ndof:   7
   # Standard Franka ready pose [rad]
@@ -35,6 +40,10 @@ controller:
   kp: [600.0, 600.0, 600.0, 600.0, 250.0, 150.0, 50.0]
   kd: [50.0,  50.0,  50.0,  50.0,  30.0,  25.0,  15.0]
 
+diff_ik_control:
+  dt: 0.01
+
+  
 planner:
   rate_hz:          10    # re-plan rate [Hz]
   trajectory_dt:    0.02  # waypoint spacing [s]

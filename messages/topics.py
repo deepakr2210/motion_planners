@@ -21,7 +21,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Dict, Type
 
-from .types import StateMsg, TrajectoryMsg, CommandMsg, Waypoint
+from .types import StateMsg, TrajectoryMsg, CommandMsg, Waypoint, Twist
 
 
 # ── TopicSpec ────────────────────────────────────────────────────────────────
@@ -66,6 +66,15 @@ CMD = TopicSpec(
     description = "Control command (torques | desired q | kinematic q) sent to the sim",
 )
 
+TWIST = TopicSpec(
+    name        = "TWIST",
+    bytes       = b"TWIST",
+    msg_type    = Twist,
+    publisher   = "twist_publisher",
+    subscribers = ("diff_ik_control",),
+    description = "End-effector velocity twist [vx, vy, vz, wx, wy, wz] in world frame",
+)
+
 
 # ── Registry ─────────────────────────────────────────────────────────────────
 
@@ -97,4 +106,4 @@ class _TopicRegistry:
         return f"TopicRegistry({names})"
 
 
-TOPICS = _TopicRegistry(STATE, TRAJ, CMD)
+TOPICS = _TopicRegistry(STATE, TRAJ, CMD, TWIST)

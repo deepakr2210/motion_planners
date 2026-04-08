@@ -79,3 +79,8 @@ class CommandMsg:
     values:    List[float]
     mode:      str   = MODE_TORQUE
     wall_time: float = field(default_factory=time.time)
+
+@dataclass
+class Twist:
+    twist:     List[float]
+    wall_time: float = field(default_factory=time.time)

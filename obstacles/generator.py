@@ -4,7 +4,7 @@ Obstacle generator — randomly places collision spheres in the Panda workspace.
 Outputs
 -------
   obstacles/data.yaml                          sphere centres + radii (loaded by CollisionChecker)
-  assets/mujoco_menagerie/franka_emika_panda/scene_with_obstacles.xml  MuJoCo scene ready for the sim
+  scenes/panda_with_obstacles.xml              complete MuJoCo scene ready for the sim
 
 Usage
 -----
@@ -48,7 +48,7 @@ def _home_link_positions() -> list[np.ndarray]:
     simplified FK (close enough for obstacle rejection, not exact).
     """
     import mujoco
-    model_path = ROOT / "assets" / "mujoco_menagerie" / "franka_emika_panda" / "scene.xml"
+    model_path = ROOT / "scenes" / "panda_base.xml"
     m = mujoco.MjModel.from_xml_path(str(model_path))
     d = mujoco.MjData(m)
     key = mujoco.mj_name2id(m, mujoco.mjtObj.mjOBJ_KEY, "home")
@@ -131,8 +131,8 @@ def write_scene_xml(spheres: list[Sphere], cfg: dict, out_path: Path) -> None:
     """
     Write a complete MuJoCo scene XML with Panda + obstacle spheres.
 
-    Output: assets/mujoco_menagerie/franka_emika_panda/scene_with_obstacles.xml
-    Must live in the same directory as scene.xml so mesh paths resolve correctly.
+    Output: scenes/panda_with_obstacles.xml
+    Includes panda_base.xml which handles the meshdir override for cross-directory loading.
     """
     rgba = cfg["obstacles"].get("rgba", [0.85, 0.2, 0.1, 0.55])
     rgba_str = " ".join(str(v) for v in rgba)
@@ -148,7 +148,7 @@ def write_scene_xml(spheres: list[Sphere], cfg: dict, out_path: Path) -> None:
 <mujoco model="panda_with_obstacles">
 
   <!-- Base scene: floor, lighting, Franka Panda -->
-  <include file="scene.xml"/>
+  <include file="panda_base.xml"/>
 
   <!-- Obstacle spheres -->
   <worldbody>
@@ -175,11 +175,10 @@ def main() -> None:
     spheres = generate(cfg, seed=args.seed, num=args.num)
 
     write_data_yaml(spheres, ROOT / "obstacles" / "data.yaml")
-    write_scene_xml(spheres, cfg,
-                    ROOT / "assets" / "mujoco_menagerie" / "franka_emika_panda" / "scene_with_obstacles.xml")
+    write_scene_xml(spheres, cfg, ROOT / "scenes" / "panda_with_obstacles.xml")
 
     print("[generator] done — launch with:")
-    print("  bash launch.sh python --scene assets/mujoco_menagerie/franka_emika_panda/scene_with_obstacles.xml")
+    print("  bash launch.sh python --scene scenes/panda_with_obstacles.xml")
 
 
 if __name__ == "__main__":
