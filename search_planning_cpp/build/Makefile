@@ -162,30 +162,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named planning_core
+# Target rules for targets named astar
 
 # Build rule for target.
-planning_core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 planning_core
-.PHONY : planning_core
+astar: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 astar
+.PHONY : astar
 
 # fast build rule for target.
-planning_core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/build
-.PHONY : planning_core/fast
-
-#=============================================================================
-# Target rules for targets named run_astar
-
-# Build rule for target.
-run_astar: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 run_astar
-.PHONY : run_astar
-
-# fast build rule for target.
-run_astar/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/build
-.PHONY : run_astar/fast
+astar/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/build
+.PHONY : astar/fast
 
 #=============================================================================
 # Target rules for targets named minimal
@@ -395,101 +382,29 @@ spy/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/spy.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/spy.dir/build
 .PHONY : spy/fast
 
-examples/run_astar.o: examples/run_astar.cpp.o
-.PHONY : examples/run_astar.o
+Search_2D/astar.o: Search_2D/astar.cpp.o
+.PHONY : Search_2D/astar.o
 
 # target to build an object file
-examples/run_astar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/examples/run_astar.cpp.o
-.PHONY : examples/run_astar.cpp.o
+Search_2D/astar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/Search_2D/astar.cpp.o
+.PHONY : Search_2D/astar.cpp.o
 
-examples/run_astar.i: examples/run_astar.cpp.i
-.PHONY : examples/run_astar.i
-
-# target to preprocess a source file
-examples/run_astar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/examples/run_astar.cpp.i
-.PHONY : examples/run_astar.cpp.i
-
-examples/run_astar.s: examples/run_astar.cpp.s
-.PHONY : examples/run_astar.s
-
-# target to generate assembly for a file
-examples/run_astar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/examples/run_astar.cpp.s
-.PHONY : examples/run_astar.cpp.s
-
-src/algorithms/astar.o: src/algorithms/astar.cpp.o
-.PHONY : src/algorithms/astar.o
-
-# target to build an object file
-src/algorithms/astar.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/src/algorithms/astar.cpp.o
-.PHONY : src/algorithms/astar.cpp.o
-
-src/algorithms/astar.i: src/algorithms/astar.cpp.i
-.PHONY : src/algorithms/astar.i
+Search_2D/astar.i: Search_2D/astar.cpp.i
+.PHONY : Search_2D/astar.i
 
 # target to preprocess a source file
-src/algorithms/astar.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/src/algorithms/astar.cpp.i
-.PHONY : src/algorithms/astar.cpp.i
+Search_2D/astar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/Search_2D/astar.cpp.i
+.PHONY : Search_2D/astar.cpp.i
 
-src/algorithms/astar.s: src/algorithms/astar.cpp.s
-.PHONY : src/algorithms/astar.s
-
-# target to generate assembly for a file
-src/algorithms/astar.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/src/algorithms/astar.cpp.s
-.PHONY : src/algorithms/astar.cpp.s
-
-src/env.o: src/env.cpp.o
-.PHONY : src/env.o
-
-# target to build an object file
-src/env.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/src/env.cpp.o
-.PHONY : src/env.cpp.o
-
-src/env.i: src/env.cpp.i
-.PHONY : src/env.i
-
-# target to preprocess a source file
-src/env.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/src/env.cpp.i
-.PHONY : src/env.cpp.i
-
-src/env.s: src/env.cpp.s
-.PHONY : src/env.s
+Search_2D/astar.s: Search_2D/astar.cpp.s
+.PHONY : Search_2D/astar.s
 
 # target to generate assembly for a file
-src/env.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/src/env.cpp.s
-.PHONY : src/env.cpp.s
-
-src/plotting.o: src/plotting.cpp.o
-.PHONY : src/plotting.o
-
-# target to build an object file
-src/plotting.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/src/plotting.cpp.o
-.PHONY : src/plotting.cpp.o
-
-src/plotting.i: src/plotting.cpp.i
-.PHONY : src/plotting.i
-
-# target to preprocess a source file
-src/plotting.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/src/plotting.cpp.i
-.PHONY : src/plotting.cpp.i
-
-src/plotting.s: src/plotting.cpp.s
-.PHONY : src/plotting.s
-
-# target to generate assembly for a file
-src/plotting.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/src/plotting.cpp.s
-.PHONY : src/plotting.cpp.s
+Search_2D/astar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/Search_2D/astar.cpp.s
+.PHONY : Search_2D/astar.cpp.s
 
 # Help Target
 help:
@@ -504,6 +419,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... animation"
+	@echo "... astar"
 	@echo "... bar"
 	@echo "... basic"
 	@echo "... colorbar"
@@ -514,25 +430,14 @@ help:
 	@echo "... minimal"
 	@echo "... modern"
 	@echo "... nonblock"
-	@echo "... planning_core"
-	@echo "... run_astar"
 	@echo "... spy"
 	@echo "... subplot2grid"
 	@echo "... surface"
 	@echo "... update"
 	@echo "... xkcd"
-	@echo "... examples/run_astar.o"
-	@echo "... examples/run_astar.i"
-	@echo "... examples/run_astar.s"
-	@echo "... src/algorithms/astar.o"
-	@echo "... src/algorithms/astar.i"
-	@echo "... src/algorithms/astar.s"
-	@echo "... src/env.o"
-	@echo "... src/env.i"
-	@echo "... src/env.s"
-	@echo "... src/plotting.o"
-	@echo "... src/plotting.i"
-	@echo "... src/plotting.s"
+	@echo "... Search_2D/astar.o"
+	@echo "... Search_2D/astar.i"
+	@echo "... Search_2D/astar.s"
 .PHONY : help
 
 

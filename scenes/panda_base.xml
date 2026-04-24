@@ -24,4 +24,42 @@
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
   </worldbody>
+
+  <!--
+    Pure-torque motor actuators for joints 1-7.
+    These are appended AFTER panda.xml's 8 actuators (7 position servos + 1 gripper),
+    so they occupy ctrl indices [ndof+1 .. 2*ndof].
+
+    ctrl layout:
+      [0 .. ndof-1]      position servo actuators  (from panda.xml)
+      [ndof]             gripper                    (from panda.xml)
+      [ndof+1 .. 2*ndof] motor torque actuators     (this block)
+
+    Usage:
+      MODE_POSITION  ->  servo ctrl = q_des,  motor ctrl = 0
+      MODE_TORQUE    ->  servo ctrl = q + kd*qd/kp (force=0),  motor ctrl = tau
+  -->
+  <!--
+    Pure-torque motor actuators — group 1.
+    Position servo actuators (from panda.xml) default to group 0.
+
+    ctrl layout:
+      [0 .. ndof-1]      group 0  position servo  (panda.xml)
+      [ndof]             group 0  gripper          (panda.xml)
+      [ndof+1 .. 2*ndof] group 1  motor torque     (this block)
+
+    At runtime the sim toggles model.opt.disableactuator:
+      MODE_POSITION  ->  disable group 1 (bit 1 = 0b10),  servo ctrl = q_des
+      MODE_TORQUE    ->  disable group 0 (bit 0 = 0b01),  motor ctrl = tau
+  -->
+  <actuator>
+    <motor name="torque1" joint="joint1" group="1" forcerange="-87 87" ctrlrange="-87 87"/>
+    <motor name="torque2" joint="joint2" group="1" forcerange="-87 87" ctrlrange="-87 87"/>
+    <motor name="torque3" joint="joint3" group="1" forcerange="-87 87" ctrlrange="-87 87"/>
+    <motor name="torque4" joint="joint4" group="1" forcerange="-87 87" ctrlrange="-87 87"/>
+    <motor name="torque5" joint="joint5" group="1" forcerange="-12 12" ctrlrange="-12 12"/>
+    <motor name="torque6" joint="joint6" group="1" forcerange="-12 12" ctrlrange="-12 12"/>
+    <motor name="torque7" joint="joint7" group="1" forcerange="-12 12" ctrlrange="-12 12"/>
+  </actuator>
+
 </mujoco>

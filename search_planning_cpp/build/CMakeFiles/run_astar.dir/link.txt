@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/run_astar.dir/examples/run_astar.cpp.o CMakeFiles/run_astar.dir/src/algorithms/astar.cpp.o -o run_astar  libplanning_core.a /usr/lib/x86_64-linux-gnu/libpython3.10.so

@@ -22,7 +22,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -293,6 +293,9 @@ CPPZMQ_CMAKECONFIG_INSTALL_DIR:STRING=share/cmake/cppzmq
 //Build and install draft classes and methods
 ENABLE_DRAFTS:BOOL=OFF
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/share/eigen3/cmake
+
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/home/deepak/Data/planning/build/_deps
 
@@ -311,6 +314,10 @@ FETCHCONTENT_SOURCE_DIR_CPPZMQ:PATH=
 // for nlohmann_json
 FETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON:PATH=
 
+//When not empty, overrides where to find pre-populated content
+// for yaml-cpp
+FETCHCONTENT_SOURCE_DIR_YAML-CPP:PATH=
+
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
@@ -319,6 +326,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_CPPZMQ:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of nlohmann_json
 FETCHCONTENT_UPDATES_DISCONNECTED_NLOHMANN_JSON:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of yaml-cpp
+FETCHCONTENT_UPDATES_DISCONNECTED_YAML-CPP:BOOL=OFF
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
@@ -358,6 +368,12 @@ PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+YAML_CPP_BUILD_CONTRIB:BOOL=OFF
+
+YAML_CPP_BUILD_TESTS:BOOL=OFF
+
+YAML_CPP_BUILD_TOOLS:BOOL=OFF
 
 //The directory containing a CMake configuration file for ZeroMQ.
 ZeroMQ_DIR:PATH=ZeroMQ_DIR-NOTFOUND
@@ -549,7 +565,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

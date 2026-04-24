@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.2.0/CMakeSystem.cmake"
   "CMakeLists.txt"
   "nlohmann_json-populate-prefix/tmp/nlohmann_json-populate-mkdirs.cmake"
-  "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake"
-  "/usr/share/cmake-4.2/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-4.2/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.2.0/CMakeSystem.cmake"
   "nlohmann_json-populate-prefix/tmp/nlohmann_json-populate-mkdirs.cmake"
   "nlohmann_json-populate-prefix/tmp/nlohmann_json-populate-gitclone.cmake"
   "nlohmann_json-populate-prefix/src/nlohmann_json-populate-stamp/nlohmann_json-populate-gitinfo.txt"

@@ -12,37 +12,55 @@ uv run python -m sim.mujoco_sim
     uv run python -m sim.mujoco_sim --no-render   # headless
 
 ──────────────────────────────────────────────
-TERMINAL 2 — Diff IK Node (Franka Panda)
+TERMINAL 2 — Diff IK Node
 ──────────────────────────────────────────────
 cd /home/deepak/Data/planning
 uv run python scripts/test_diff_ik.py
 
-  Loads the Franka model, wires DiffIKControl to ZMQ.
+  Reads real state.q each cycle (closed-loop) to compute Δq via
+  damped-pseudoinverse IK, then pushes MODE_POSITION commands.
   Subscribes: STATE (5555), TWIST (5558)
   Publishes:  CMD   (5556)
 
 ──────────────────────────────────────────────
-TERMINAL 3 — Twist Publisher
+TERMINAL 3 — Twist Input (choose one)
 ──────────────────────────────────────────────
-cd /home/deepak/Data/planning
-uv run python tasks/draw_circle.py
 
-  Default: move EE upward +Z at 5 cm/s for 5 seconds, then stop.
+  A) Interactive keyboard teleop:
+    uv run python scripts/teleop.py
 
-  Options:
-    --vx --vy --vz   linear velocity  [m/s]
-    --wx --wy --wz   angular velocity [rad/s]
-    --duration 8     run for 8 seconds
-    --rate-hz 50     publish rate
+      ↑/↓    vz +/-   (up / down)
+      ←/→    vy -/+   (left / right)
+      W/S    vx +/-   (fwd / back)
+      Q/E    wz +/-   (yaw CCW / CW)
+      A/D    wy -/+   (pitch)
+      Z/X    wx +/-   (roll)
+      Space  stop
+      ]/[    speed × 2 / ÷ 2
+      Ctrl-C quit
 
-  Examples:
-    uv run python scripts/draw_circle.py --vz 0.05 --duration 8
-    uv run python scripts/draw_circle.py --vx 0.03 --wz 0.2
-    uv run python scripts/draw_circle.py --vz -0.05
+  B) Scripted circle trajectory:
+    uv run python tasks/draw_circle.py
+
+      Options:
+        --radius 0.08   circle radius [m]
+        --omega  0.4    angular speed [rad/s]
+        --revs   2.0    number of revolutions
+        --mode linear --vz 0.05 --duration 5   # move up instead
+
+──────────────────────────────────────────────
+EXTRA — Direct Joint Position Command
+──────────────────────────────────────────────
+  (No Diff IK node needed — sends q_pos straight to sim)
+
+  uv run python scripts/cmd_qpos.py                             # home pose
+  uv run python scripts/cmd_qpos.py 0 -0.785 0 -2.356 0 1.571 0.785
+  uv run python scripts/cmd_qpos.py --mode kinematic 0 0 0 -1.57 0 1.57 0.785
 
 ──────────────────────────────────────────────
 ZMQ Topic Map
 ──────────────────────────────────────────────
-  sim        PUB  tcp://*:5555  →  STATE  (q, qd, qfrc_bias)
-  sim        PULL tcp://*:5556  ←  CMD    (desired joint positions)
+  sim          PUB  tcp://*:5555  →  STATE  (q, qd, qfrc_bias)
+  sim          PULL tcp://*:5556  ←  CMD    (desired joint positions)
+  teleop /
   draw_circle  PUB  tcp://*:5558  →  TWIST  (vx, vy, vz, wx, wy, wz)

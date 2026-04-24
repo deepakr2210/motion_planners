@@ -20,10 +20,11 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -35,10 +36,11 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/uname"
       - "/home/deepak/.local/bin/uname"
+      - "/usr/local/cuda-12.8/bin/uname"
       - "/home/deepak/snap/code/229/.local/bin/uname"
       - "/opt/ros/humble/bin/uname"
-      - "/usr/local/cuda-12.8/bin/uname"
       - "/home/deepak/miniconda3/condabin/uname"
       - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
@@ -46,6 +48,10 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"

@@ -20,10 +20,11 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -35,10 +36,11 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/uname"
       - "/home/deepak/.local/bin/uname"
+      - "/usr/local/cuda-12.8/bin/uname"
       - "/home/deepak/snap/code/229/.local/bin/uname"
       - "/opt/ros/humble/bin/uname"
-      - "/usr/local/cuda-12.8/bin/uname"
       - "/home/deepak/miniconda3/condabin/uname"
       - "/usr/local/sbin/uname"
       - "/usr/local/bin/uname"
@@ -46,6 +48,10 @@ events:
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -90,10 +96,11 @@ events:
       - "make"
       - "smake"
     candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -105,10 +112,11 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/gmake"
       - "/home/deepak/.local/bin/gmake"
+      - "/usr/local/cuda-12.8/bin/gmake"
       - "/home/deepak/snap/code/229/.local/bin/gmake"
       - "/opt/ros/humble/bin/gmake"
-      - "/usr/local/cuda-12.8/bin/gmake"
       - "/home/deepak/miniconda3/condabin/gmake"
       - "/usr/local/sbin/gmake"
       - "/usr/local/bin/gmake"
@@ -116,6 +124,10 @@ events:
     found: "/usr/bin/gmake"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -161,10 +173,11 @@ events:
       - "icx"
       - "clang++"
     candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -176,10 +189,11 @@ events:
       - "/usr/local/games/"
       - "/snap/bin/"
     searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/c++"
       - "/home/deepak/.local/bin/c++"
+      - "/usr/local/cuda-12.8/bin/c++"
       - "/home/deepak/snap/code/229/.local/bin/c++"
       - "/opt/ros/humble/bin/c++"
-      - "/usr/local/cuda-12.8/bin/c++"
       - "/home/deepak/miniconda3/condabin/c++"
       - "/usr/local/sbin/c++"
       - "/usr/local/bin/c++"
@@ -187,6 +201,10 @@ events:
     found: "/usr/bin/c++"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -230,6 +248,10 @@ events:
     found: "/usr/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -289,10 +311,11 @@ events:
       - "ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -305,6 +328,10 @@ events:
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -342,10 +369,11 @@ events:
       - "ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -358,6 +386,10 @@ events:
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -395,10 +427,11 @@ events:
       - "strip"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -411,6 +444,10 @@ events:
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -448,10 +485,11 @@ events:
       - "ld"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -464,6 +502,10 @@ events:
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -501,10 +543,11 @@ events:
       - "nm"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -517,6 +560,10 @@ events:
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -554,10 +601,11 @@ events:
       - "objdump"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -570,6 +618,10 @@ events:
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -607,10 +659,11 @@ events:
       - "objcopy"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -623,6 +676,10 @@ events:
     found: "/usr/bin/objcopy"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -660,10 +717,11 @@ events:
       - "readelf"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -676,6 +734,10 @@ events:
     found: "/usr/bin/readelf"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -713,10 +775,11 @@ events:
       - "dlltool"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -728,10 +791,11 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/dlltool"
+      - "/home/deepak/Data/planning/.venv/bin/dlltool"
       - "/home/deepak/.local/bin/dlltool"
+      - "/usr/local/cuda-12.8/bin/dlltool"
       - "/home/deepak/snap/code/229/.local/bin/dlltool"
       - "/opt/ros/humble/bin/dlltool"
-      - "/usr/local/cuda-12.8/bin/dlltool"
       - "/home/deepak/miniconda3/condabin/dlltool"
       - "/usr/local/sbin/dlltool"
       - "/usr/local/bin/dlltool"
@@ -744,6 +808,10 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -781,10 +849,11 @@ events:
       - "addr2line"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -797,6 +866,10 @@ events:
     found: "/usr/bin/addr2line"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -834,10 +907,11 @@ events:
       - "tapi"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -849,10 +923,11 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/tapi"
+      - "/home/deepak/Data/planning/.venv/bin/tapi"
       - "/home/deepak/.local/bin/tapi"
+      - "/usr/local/cuda-12.8/bin/tapi"
       - "/home/deepak/snap/code/229/.local/bin/tapi"
       - "/opt/ros/humble/bin/tapi"
-      - "/usr/local/cuda-12.8/bin/tapi"
       - "/home/deepak/miniconda3/condabin/tapi"
       - "/usr/local/sbin/tapi"
       - "/usr/local/bin/tapi"
@@ -865,6 +940,10 @@ events:
     found: false
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -905,10 +984,11 @@ events:
       - "gcc-ar"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -920,10 +1000,11 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/gcc-ar-11.4"
+      - "/home/deepak/Data/planning/.venv/bin/gcc-ar-11.4"
       - "/home/deepak/.local/bin/gcc-ar-11.4"
+      - "/usr/local/cuda-12.8/bin/gcc-ar-11.4"
       - "/home/deepak/snap/code/229/.local/bin/gcc-ar-11.4"
       - "/opt/ros/humble/bin/gcc-ar-11.4"
-      - "/usr/local/cuda-12.8/bin/gcc-ar-11.4"
       - "/home/deepak/miniconda3/condabin/gcc-ar-11.4"
       - "/usr/local/sbin/gcc-ar-11.4"
       - "/usr/local/bin/gcc-ar-11.4"
@@ -936,6 +1017,10 @@ events:
     found: "/usr/bin/gcc-ar-11"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -976,10 +1061,11 @@ events:
       - "gcc-ranlib"
     candidate_directories:
       - "/usr/bin/"
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -991,10 +1077,11 @@ events:
       - "/snap/bin/"
     searched_directories:
       - "/usr/bin/gcc-ranlib-11.4"
+      - "/home/deepak/Data/planning/.venv/bin/gcc-ranlib-11.4"
       - "/home/deepak/.local/bin/gcc-ranlib-11.4"
+      - "/usr/local/cuda-12.8/bin/gcc-ranlib-11.4"
       - "/home/deepak/snap/code/229/.local/bin/gcc-ranlib-11.4"
       - "/opt/ros/humble/bin/gcc-ranlib-11.4"
-      - "/usr/local/cuda-12.8/bin/gcc-ranlib-11.4"
       - "/home/deepak/miniconda3/condabin/gcc-ranlib-11.4"
       - "/usr/local/sbin/gcc-ranlib-11.4"
       - "/usr/local/bin/gcc-ranlib-11.4"
@@ -1007,6 +1094,10 @@ events:
     found: "/usr/bin/gcc-ranlib-11"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -1032,24 +1123,25 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx"
-      binary: "/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx"
+      source: "/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO"
+      binary: "/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
       CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
       CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_WARN_DEPRECATED: "FALSE"
     buildResult:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx'
+        Change Dir: '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO'
         
-        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f5ca7/fast
-        /usr/bin/gmake  -f CMakeFiles/cmTC_f5ca7.dir/build.make CMakeFiles/cmTC_f5ca7.dir/build
-        gmake[1]: Entering directory '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx'
-        Building CXX object CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -v -o CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9def3/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9def3.dir/build.make CMakeFiles/cmTC_9def3.dir/build
+        gmake[1]: Entering directory '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO'
+        Building CXX object CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
@@ -1059,8 +1151,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) 
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5ca7.dir/'
-         /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f5ca7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccQ8t4sc.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9def3.dir/'
+         /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9def3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccFSEpU2.s
         GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (x86_64-linux-gnu)
         	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
         
@@ -1084,14 +1176,14 @@ events:
         
         GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
         Compiler executable checksum: ac7fa628ee459f217e6fdb88b3db0bde
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5ca7.dir/'
-         as -v --64 -o CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccQ8t4sc.s
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9def3.dir/'
+         as -v --64 -o CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFSEpU2.s
         GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.'
-        Linking CXX executable cmTC_f5ca7
-        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5ca7.dir/link.txt --verbose=1
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_9def3
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9def3.dir/link.txt --verbose=1
         Using built-in specs.
         COLLECT_GCC=/usr/bin/c++
         COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper
@@ -1104,14 +1196,14 @@ events:
         gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) 
         COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/
         LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5ca7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f5ca7.'
-         /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm3dbzH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f5ca7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9def3' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9def3.'
+         /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTGzqQ2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9def3 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
         collect2 version 11.4.0
-        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm3dbzH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f5ca7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTGzqQ2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9def3 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o
         GNU ld (GNU Binutils for Ubuntu) 2.38
-        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5ca7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f5ca7.'
-        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_f5ca7
-        gmake[1]: Leaving directory '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx'
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9def3' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9def3.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9def3
+        gmake[1]: Leaving directory '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO'
         
       exitCode: 0
   -
@@ -1152,13 +1244,13 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx']
+        ignore line: [Change Dir: '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f5ca7/fast]
-        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_f5ca7.dir/build.make CMakeFiles/cmTC_f5ca7.dir/build]
-        ignore line: [gmake[1]: Entering directory '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-RfGnBx']
-        ignore line: [Building CXX object CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9def3/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_9def3.dir/build.make CMakeFiles/cmTC_9def3.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles/CMakeScratch/TryCompile-yKYsdO']
+        ignore line: [Building CXX object CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
@@ -1168,8 +1260,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5ca7.dir/']
-        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_f5ca7.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccQ8t4sc.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9def3.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/cc1plus -quiet -v -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9def3.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccFSEpU2.s]
         ignore line: [GNU C++17 (Ubuntu 11.4.0-1ubuntu1~22.04.3) version 11.4.0 (x86_64-linux-gnu)]
         ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
         ignore line: []
@@ -1193,14 +1285,14 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
         ignore line: [Compiler executable checksum: ac7fa628ee459f217e6fdb88b3db0bde]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5ca7.dir/']
-        ignore line: [ as -v --64 -o CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccQ8t4sc.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9def3.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFSEpU2.s]
         ignore line: [GNU assembler version 2.38 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.38]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [Linking CXX executable cmTC_f5ca7]
-        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5ca7.dir/link.txt --verbose=1]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_9def3]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9def3.dir/link.txt --verbose=1]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/usr/bin/c++]
         ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper]
@@ -1213,13 +1305,13 @@ events:
         ignore line: [gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04.3) ]
         ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/]
         ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/11/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/11/../../../:/lib/:/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_f5ca7' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_f5ca7.']
-        link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm3dbzH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f5ca7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_9def3' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_9def3.']
+        link line: [ /usr/lib/gcc/x86_64-linux-gnu/11/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTGzqQ2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9def3 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccm3dbzH.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccTGzqQ2.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -1237,7 +1329,7 @@ events:
           arg [-znow] ==> ignore
           arg [-zrelro] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_f5ca7] ==> ignore
+          arg [cmTC_9def3] ==> ignore
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o]
@@ -1250,7 +1342,7 @@ events:
           arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
           arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../..]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lstdc++] ==> lib [stdc++]
           arg [-lm] ==> lib [m]
           arg [-lgcc_s] ==> lib [gcc_s]
@@ -1261,7 +1353,7 @@ events:
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o]
           arg [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
         ignore line: [collect2 version 11.4.0]
-        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccm3dbzH.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_f5ca7 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_f5ca7.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-linux-gnu/11/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/11/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTGzqQ2.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_9def3 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -v CMakeFiles/cmTC_9def3.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o]
         linker tool for 'CXX': /usr/bin/ld
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
         collapse obj [/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
@@ -1299,7 +1391,7 @@ events:
       - "/usr/share/cmake-4.2/Modules/FetchContent.cmake:2155:EVAL:2 (__FetchContent_doPopulation)"
       - "/usr/share/cmake-4.2/Modules/FetchContent.cmake:2155 (cmake_language)"
       - "/usr/share/cmake-4.2/Modules/FetchContent.cmake:2394 (__FetchContent_Populate)"
-      - "CMakeLists.txt:16 (FetchContent_MakeAvailable)"
+      - "CMakeLists.txt:17 (FetchContent_MakeAvailable)"
     mode: "program"
     variable: "GIT_EXECUTABLE"
     description: "Git command line client"
@@ -1314,10 +1406,11 @@ events:
     names:
       - "git"
     candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
       - "/home/deepak/.local/bin/"
+      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/snap/code/229/.local/bin/"
       - "/opt/ros/humble/bin/"
-      - "/usr/local/cuda-12.8/bin/"
       - "/home/deepak/miniconda3/condabin/"
       - "/usr/local/sbin/"
       - "/usr/local/bin/"
@@ -1346,10 +1439,11 @@ events:
       - "/opt/sbin/"
       - "/opt/"
     searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/git"
       - "/home/deepak/.local/bin/git"
+      - "/usr/local/cuda-12.8/bin/git"
       - "/home/deepak/snap/code/229/.local/bin/git"
       - "/opt/ros/humble/bin/git"
-      - "/usr/local/cuda-12.8/bin/git"
       - "/home/deepak/miniconda3/condabin/git"
       - "/usr/local/sbin/git"
       - "/usr/local/bin/git"
@@ -1357,6 +1451,10 @@ events:
     found: "/usr/bin/git"
     search_context:
       ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
         - "/home/deepak/.local/bin"
         - "/home/deepak/snap/code/229/.local/share/../bin"
         - "/home/deepak/.local/bin"
@@ -1383,6 +1481,745 @@ events:
         - "/usr/X11R6"
         - "/usr/pkg"
         - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:2144 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/matplotlibcpp-src/CMakeLists.txt:20 (find_package)"
+    mode: "program"
+    variable: "_Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.15mu"
+      - "python3.15m"
+      - "python3.15u"
+      - "python3.15"
+      - "python3.15dmu"
+      - "python3.15dm"
+      - "python3.15du"
+      - "python3.15d"
+      - "python3"
+      - "python"
+    candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
+      - "/home/deepak/Data/planning/.venv/Scripts/"
+      - "/home/deepak/Data/planning/.venv/"
+    searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/python3.15mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15u"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15dmu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15dm"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15du"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15d"
+      - "/home/deepak/Data/planning/.venv/bin/python3"
+      - "/home/deepak/Data/planning/.venv/bin/python"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15mu"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15m"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15u"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15dmu"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15dm"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15du"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3.15d"
+      - "/home/deepak/Data/planning/.venv/Scripts/python3"
+      - "/home/deepak/Data/planning/.venv/Scripts/python"
+      - "/home/deepak/Data/planning/.venv/python3.15mu"
+      - "/home/deepak/Data/planning/.venv/python3.15m"
+      - "/home/deepak/Data/planning/.venv/python3.15u"
+      - "/home/deepak/Data/planning/.venv/python3.15"
+      - "/home/deepak/Data/planning/.venv/python3.15dmu"
+      - "/home/deepak/Data/planning/.venv/python3.15dm"
+      - "/home/deepak/Data/planning/.venv/python3.15du"
+      - "/home/deepak/Data/planning/.venv/python3.15d"
+      - "/home/deepak/Data/planning/.venv/python3"
+      - "/home/deepak/Data/planning/.venv/python"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:2144 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/matplotlibcpp-src/CMakeLists.txt:20 (find_package)"
+    mode: "program"
+    variable: "_Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.11mu"
+      - "python3.11m"
+      - "python3.11u"
+      - "python3.11"
+      - "python3.11dmu"
+      - "python3.11dm"
+      - "python3.11du"
+      - "python3.11d"
+      - "python3"
+      - "python"
+    candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
+      - "/home/deepak/Data/planning/.venv/Scripts/"
+      - "/home/deepak/Data/planning/.venv/"
+    searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/python3.11mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.11m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.11u"
+    found: "/home/deepak/Data/planning/.venv/bin/python3.11"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:3201 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/matplotlibcpp-src/CMakeLists.txt:20 (find_package)"
+    mode: "library"
+    variable: "_Python3_LIBRARY_RELEASE"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python311"
+      - "python3.11"
+    candidate_directories:
+      - "/home/deepak/Data/planning/.venv/lib/x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/"
+      - "/home/deepak/Data/planning/.venv/libs/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11/"
+      - "/home/deepak/Data/planning/.venv/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/libs/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/libs/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/python3.11/config-3.11/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+    searched_directories:
+      - "/home/deepak/Data/planning/.venv/lib/x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/"
+      - "/home/deepak/Data/planning/.venv/lib/"
+      - "/home/deepak/Data/planning/.venv/libs/"
+      - "/home/deepak/Data/planning/.venv/libs/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11/"
+      - "/home/deepak/Data/planning/.venv/"
+      - "/home/deepak/Data/planning/.venv/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/"
+    found: "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/libpython3.11.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:3716 (find_path)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/matplotlibcpp-src/CMakeLists.txt:20 (find_package)"
+    mode: "path"
+    variable: "_Python3_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Python.h"
+    candidate_directories:
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/include/python3.11/"
+    found: "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/include/python3.11/"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:4098 (find_path)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "build/_deps/matplotlibcpp-src/CMakeLists.txt:25 (find_package)"
+    mode: "path"
+    variable: "_Python3_NumPy_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "numpy/arrayobject.h"
+      - "numpy/numpyconfig.h"
+    candidate_directories:
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/site-packages/numpy/_core/include/"
+    found: "/home/deepak/Data/planning/.venv/lib/python3.11/site-packages/numpy/_core/include/"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:2022 (find_program)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "CMakeLists.txt:19 (find_package)"
+    mode: "program"
+    variable: "_Python3_EXECUTABLE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python3.15mu"
+      - "python3.15m"
+      - "python3.15u"
+      - "python3.15"
+      - "python3.15dmu"
+      - "python3.15dm"
+      - "python3.15du"
+      - "python3.15d"
+      - "python3.14mu"
+      - "python3.14m"
+      - "python3.14u"
+      - "python3.14"
+      - "python3.14dmu"
+      - "python3.14dm"
+      - "python3.14du"
+      - "python3.14d"
+      - "python3.13mu"
+      - "python3.13m"
+      - "python3.13u"
+      - "python3.13"
+      - "python3.13dmu"
+      - "python3.13dm"
+      - "python3.13du"
+      - "python3.13d"
+      - "python3.12mu"
+      - "python3.12m"
+      - "python3.12u"
+      - "python3.12"
+      - "python3.12dmu"
+      - "python3.12dm"
+      - "python3.12du"
+      - "python3.12d"
+      - "python3.11mu"
+      - "python3.11m"
+      - "python3.11u"
+      - "python3.11"
+      - "python3.11dmu"
+      - "python3.11dm"
+      - "python3.11du"
+      - "python3.11d"
+      - "python3.10mu"
+      - "python3.10m"
+      - "python3.10u"
+      - "python3.10"
+      - "python3.10dmu"
+      - "python3.10dm"
+      - "python3.10du"
+      - "python3.10d"
+      - "python3.9mu"
+      - "python3.9m"
+      - "python3.9u"
+      - "python3.9"
+      - "python3.9dmu"
+      - "python3.9dm"
+      - "python3.9du"
+      - "python3.9d"
+      - "python3.8mu"
+      - "python3.8m"
+      - "python3.8u"
+      - "python3.8"
+      - "python3.8dmu"
+      - "python3.8dm"
+      - "python3.8du"
+      - "python3.8d"
+      - "python3.7mu"
+      - "python3.7m"
+      - "python3.7u"
+      - "python3.7"
+      - "python3.7dmu"
+      - "python3.7dm"
+      - "python3.7du"
+      - "python3.7d"
+      - "python3.6mu"
+      - "python3.6m"
+      - "python3.6u"
+      - "python3.6"
+      - "python3.6dmu"
+      - "python3.6dm"
+      - "python3.6du"
+      - "python3.6d"
+      - "python3.5mu"
+      - "python3.5m"
+      - "python3.5u"
+      - "python3.5"
+      - "python3.5dmu"
+      - "python3.5dm"
+      - "python3.5du"
+      - "python3.5d"
+      - "python3.4mu"
+      - "python3.4m"
+      - "python3.4u"
+      - "python3.4"
+      - "python3.4dmu"
+      - "python3.4dm"
+      - "python3.4du"
+      - "python3.4d"
+      - "python3.3mu"
+      - "python3.3m"
+      - "python3.3u"
+      - "python3.3"
+      - "python3.3dmu"
+      - "python3.3dm"
+      - "python3.3du"
+      - "python3.3d"
+      - "python3.2mu"
+      - "python3.2m"
+      - "python3.2u"
+      - "python3.2"
+      - "python3.2dmu"
+      - "python3.2dm"
+      - "python3.2du"
+      - "python3.2d"
+      - "python3.1mu"
+      - "python3.1m"
+      - "python3.1u"
+      - "python3.1"
+      - "python3.1dmu"
+      - "python3.1dm"
+      - "python3.1du"
+      - "python3.1d"
+      - "python3.0mu"
+      - "python3.0m"
+      - "python3.0u"
+      - "python3.0"
+      - "python3.0dmu"
+      - "python3.0dm"
+      - "python3.0du"
+      - "python3.0d"
+      - "python3"
+      - "python"
+    candidate_directories:
+      - "/home/deepak/Data/planning/.venv/bin/"
+      - "/home/deepak/Data/planning/.venv/Scripts/"
+      - "/home/deepak/Data/planning/.venv/"
+    searched_directories:
+      - "/home/deepak/Data/planning/.venv/bin/python3.15mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15u"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15dmu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15dm"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15du"
+      - "/home/deepak/Data/planning/.venv/bin/python3.15d"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14u"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14dmu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14dm"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14du"
+      - "/home/deepak/Data/planning/.venv/bin/python3.14d"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13u"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13dmu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13dm"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13du"
+      - "/home/deepak/Data/planning/.venv/bin/python3.13d"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12u"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12dmu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12dm"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12du"
+      - "/home/deepak/Data/planning/.venv/bin/python3.12d"
+      - "/home/deepak/Data/planning/.venv/bin/python3.11mu"
+      - "/home/deepak/Data/planning/.venv/bin/python3.11m"
+      - "/home/deepak/Data/planning/.venv/bin/python3.11u"
+    found: "/home/deepak/Data/planning/.venv/bin/python3.11"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:3201 (find_library)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "CMakeLists.txt:19 (find_package)"
+    mode: "library"
+    variable: "_Python3_LIBRARY_RELEASE"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "python311"
+      - "python3.11"
+    candidate_directories:
+      - "/home/deepak/Data/planning/.venv/lib/x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/"
+      - "/home/deepak/Data/planning/.venv/libs/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11/"
+      - "/home/deepak/Data/planning/.venv/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/libs/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/libs/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/lib/python3.11/config-3.11/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+    searched_directories:
+      - "/home/deepak/Data/planning/.venv/lib/x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/"
+      - "/home/deepak/Data/planning/.venv/lib/"
+      - "/home/deepak/Data/planning/.venv/libs/"
+      - "/home/deepak/Data/planning/.venv/libs/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11-x86_64-linux-gnu/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11/"
+      - "/home/deepak/Data/planning/.venv/lib/python3.11/config-3.11/"
+      - "/home/deepak/Data/planning/.venv/"
+      - "/home/deepak/Data/planning/.venv/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/x86_64-linux-gnu/"
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/"
+    found: "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/lib/libpython3.11.so"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "/usr/lib/X11"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:3716 (find_path)"
+      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
+      - "CMakeLists.txt:19 (find_package)"
+    mode: "path"
+    variable: "_Python3_INCLUDE_DIR"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: false
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "Python.h"
+    candidate_directories:
+      - "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/include/python3.11/"
+    found: "/home/deepak/snap/code/229/.local/share/uv/python/cpython-3.11.15-linux-x86_64-gnu/include/python3.11/"
+    search_context:
+      ENV{PATH}:
+        - "/home/deepak/Data/planning/.venv/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/.local/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/.local/bin"
+        - "/home/deepak/snap/code/229/.local/share/../bin"
+        - "/home/deepak/.local/bin"
+        - "/opt/ros/humble/bin"
+        - "/usr/local/cuda-12.8/bin"
+        - "/home/deepak/miniconda3/condabin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+      CMAKE_SYSTEM_INCLUDE_PATH:
+        - "/usr/include/X11"
+...
+
+---
+events:
   -
     kind: "find-v1"
     backtrace:
@@ -2031,7 +2868,7 @@ events:
     backtrace:
       - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:2076 (find_program)"
       - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
-      - "CMakeLists.txt:18 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "program"
     variable: "_Python3_EXECUTABLE"
     description: "Path to a program."
@@ -2208,7 +3045,7 @@ events:
     backtrace:
       - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:2088 (find_program)"
       - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
-      - "CMakeLists.txt:18 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "program"
     variable: "_Python3_EXECUTABLE"
     description: "Path to a program."
@@ -5903,7 +6740,7 @@ events:
     backtrace:
       - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:3201 (find_library)"
       - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
-      - "CMakeLists.txt:18 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "library"
     variable: "_Python3_LIBRARY_RELEASE"
     description: "Path to a library."
@@ -5969,7 +6806,7 @@ events:
     backtrace:
       - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:3716 (find_path)"
       - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
-      - "CMakeLists.txt:18 (find_package)"
+      - "CMakeLists.txt:19 (find_package)"
     mode: "path"
     variable: "_Python3_INCLUDE_DIR"
     description: "Path to a file."
@@ -5986,59 +6823,6 @@ events:
     candidate_directories:
       - "/usr/include/python3.10/"
     found: "/usr/include/python3.10/"
-    search_context:
-      ENV{PATH}:
-        - "/home/deepak/.local/bin"
-        - "/home/deepak/snap/code/229/.local/share/../bin"
-        - "/home/deepak/.local/bin"
-        - "/opt/ros/humble/bin"
-        - "/usr/local/cuda-12.8/bin"
-        - "/home/deepak/miniconda3/condabin"
-        - "/usr/local/sbin"
-        - "/usr/local/bin"
-        - "/usr/sbin"
-        - "/usr/bin"
-        - "/sbin"
-        - "/bin"
-        - "/usr/games"
-        - "/usr/local/games"
-        - "/snap/bin"
-        - "/snap/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/usr"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-      CMAKE_SYSTEM_INCLUDE_PATH:
-        - "/usr/include/X11"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake-4.2/Modules/FindPython/Support.cmake:4098 (find_path)"
-      - "/usr/share/cmake-4.2/Modules/FindPython3.cmake:671 (include)"
-      - "CMakeLists.txt:18 (find_package)"
-    mode: "path"
-    variable: "_Python3_NumPy_INCLUDE_DIR"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "numpy/arrayobject.h"
-      - "numpy/numpyconfig.h"
-    candidate_directories:
-      - "/usr/local/lib/python3.10/dist-packages/numpy/core/include/"
-    found: "/usr/local/lib/python3.10/dist-packages/numpy/core/include/"
     search_context:
       ENV{PATH}:
         - "/home/deepak/.local/bin"

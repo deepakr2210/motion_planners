@@ -10,10 +10,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.2.0/CMakeSystem.cmake"
   "CMakeLists.txt"
   "matplotlibcpp-populate-prefix/tmp/matplotlibcpp-populate-mkdirs.cmake"
-  "/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake"
-  "/usr/share/cmake-4.2/Modules/CMakeSystem.cmake.in"
   "/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-4.2/Modules/ExternalProject.cmake"
@@ -38,7 +36,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "CMakeFiles/4.2.0/CMakeSystem.cmake"
   "matplotlibcpp-populate-prefix/tmp/matplotlibcpp-populate-mkdirs.cmake"
   "matplotlibcpp-populate-prefix/tmp/matplotlibcpp-populate-gitclone.cmake"
   "matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-gitinfo.txt"

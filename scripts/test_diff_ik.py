@@ -1,10 +1,21 @@
 """
-Franka Panda — Diff IK test.
+Franka Panda — Diff IK node.
+
+Subscribes to STATE (5555) and TWIST (5558).
+
+Strategy: open-loop integration.
+  - Snapshot q from the first state message received.
+  - Each cycle: q_cmd += J(q_cmd)⁺ · v_twist · dt
+  - Push q_cmd as a MODE_POSITION command to the sim.
+
+The twist queue is drained every cycle so v_cmd is always the freshest
+sample. The state socket is only used for the initial snapshot.
 
 Run order:
     Terminal 1: uv run python -m sim.mujoco_sim
     Terminal 2: uv run python scripts/test_diff_ik.py
-    Terminal 3: uv run python scripts/pub_twist.py
+    Terminal 3: uv run python scripts/teleop.py        # interactive
+                uv run python tasks/draw_circle.py     # scripted
 """
 
 from __future__ import annotations
@@ -31,11 +42,20 @@ def main() -> None:
     with open(ROOT / "config/sim_config.yaml") as f:
         cfg = yaml.safe_load(f)
 
-    # ── Franka Panda setup ────────────────────────────────────────────────────
+    ik_cfg  = cfg["diff_ik_control"]
+    rate_hz = ik_cfg.get("rate_hz", 100)
+    rate_dt = 1.0 / rate_hz
+
+    # ── Model for Jacobian computation ────────────────────────────────────────
     model = mujoco.MjModel.from_xml_path(str(ROOT / cfg["robot"]["robot_path"]))
     data  = mujoco.MjData(model)
-    controller = DiffIKControl(model, data, ee_site="ee_site",
-                               dt=cfg["diff_ik_control"]["dt"], lam=0.1)
+    controller = DiffIKControl(
+        model, data,
+        ee_site = "ee_site",
+        dt      = ik_cfg["dt"],
+        lam     = 0.1,
+    )
+    ndof = cfg["robot"]["ndof"]
 
     # ── ZMQ sockets ───────────────────────────────────────────────────────────
     ctx = zmq.Context()
@@ -43,55 +63,63 @@ def main() -> None:
     state_sub = ctx.socket(zmq.SUB)
     state_sub.connect(cfg["zmq"]["state_sub_addr"])
     state_sub.setsockopt(zmq.SUBSCRIBE, STATE.bytes)
+    state_sub.setsockopt(zmq.RCVTIMEO, 0)
 
     twist_sub = ctx.socket(zmq.SUB)
     twist_sub.connect(cfg["zmq"]["twist_sub_addr"])
     twist_sub.setsockopt(zmq.SUBSCRIBE, TWIST.bytes)
+    twist_sub.setsockopt(zmq.RCVTIMEO, 0)
 
     cmd_push = ctx.socket(zmq.PUSH)
     cmd_push.connect(cfg["zmq"]["cmd_push_addr"])
 
-    poller = zmq.Poller()
-    poller.register(state_sub, zmq.POLLIN)
-    poller.register(twist_sub, zmq.POLLIN)
+    print(f"[diff_ik] SUB state {cfg['zmq']['state_sub_addr']}")
+    print(f"[diff_ik] SUB twist {cfg['zmq']['twist_sub_addr']}")
+    print(f"[diff_ik] PUSH cmd  {cfg['zmq']['cmd_push_addr']}")
+    print(f"[diff_ik] rate={rate_hz}Hz  dt={ik_cfg['dt']}s")
+    print("[diff_ik] waiting for first state snapshot...")
 
-    # ── Control loop ──────────────────────────────────────────────────────────
-    rate_hz = cfg["diff_ik_control"].get("rate_hz", 100)
-    rate_dt = 1.0 / rate_hz
-
-    # q_cmd is snapshotted from the first state message, then integrated open-loop.
+    # ── Wait for the initial state snapshot ───────────────────────────────────
+    state_sub.setsockopt(zmq.RCVTIMEO, 5000)   # block up to 5 s for first msg
     q_cmd: np.ndarray | None = None
-    v_cmd = np.zeros(6)
-
-    print(f"[test_diff_ik] running at {rate_hz} Hz")
-
-    t_next = time.monotonic()
-    while True:
-        socks = dict(poller.poll(timeout=0))
-
-        if state_sub in socks:
+    while q_cmd is None:
+        try:
             _, raw = state_sub.recv_multipart()
-            state = decode_state(raw)
-            if q_cmd is None:
-                q_cmd = np.array(state.q, dtype=float)
-                print("[test_diff_ik] initialised q_cmd from state snapshot")
+            q_cmd = np.array(decode_state(raw).q[:ndof], dtype=float)
+            print(f"[diff_ik] snapshot: q={q_cmd.round(3)}")
+        except zmq.Again:
+            print("[diff_ik] no state received yet, retrying...")
+    state_sub.setsockopt(zmq.RCVTIMEO, 0)      # back to non-blocking
 
-        if twist_sub in socks:
-            _, raw = twist_sub.recv_multipart()
-            v_cmd = np.array(decode_twist(raw).twist)
+    v_cmd  = np.zeros(6)
+    t_next = time.monotonic()
+
+    print("[diff_ik] running")
+    while True:
+        # ── Drain twist queue — always use the freshest v_cmd ─────────────────
+        try:
+            while True:
+                _, raw = twist_sub.recv_multipart()
+                v_cmd = np.array(decode_twist(raw).twist)
+        except zmq.Again:
+            pass
 
         now = time.monotonic()
-        if q_cmd is not None and now >= t_next:
-            t_next = now + rate_dt
-            q_cmd, _ = controller.execute(q_cmd, v_cmd)
-            cmd   = CommandMsg(values=q_cmd.tolist(), mode=MODE_POSITION)
-            cmd_push.send(encode_cmd(cmd)[1])
-        else:
-            time.sleep(0.0005)
+        if now < t_next:
+            time.sleep(t_next - now)
+            continue
+
+        t_next += rate_dt
+
+        # ── Open-loop integration: q_cmd is never re-seeded from state ────────
+        q_cmd, dq_cmd = controller.execute(q_cmd, v_cmd)
+
+        cmd = CommandMsg(values=q_cmd.tolist(), mode=MODE_POSITION)
+        cmd_push.send(encode_cmd(cmd)[1])
 
 
 if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\n[test_diff_ik] stopped")
+        print("\n[diff_ik] stopped")

@@ -86,20 +86,31 @@ def run(render: bool, cfg: dict) -> None:
     physics_dt = cfg["sim"]["timestep"]
     realtime   = cfg["sim"]["realtime"]
 
-    # Internal PD gains for position-servo mode (run at full physics rate)
-    servo_cfg = cfg["sim"]["position_servo"]
-    servo_kp  = np.array(servo_cfg["kp"][:ndof])
-    servo_kd  = np.array(servo_cfg["kd"][:ndof])
+    # ctrl layout (see panda_base.xml):
+    #   [0 .. ndof-1]       position servo actuators  (panda.xml, affine bias)
+    #   [ndof]              gripper                    (panda.xml)
+    #   [ndof+1 .. 2*ndof]  motor torque actuators     (panda_base.xml)
+    motor_start = ndof + 1   # index 8 for a 7-DOF arm
 
-    print(f"[sim] model: {model_path.name}  ndof={ndof}")
+    # disableactuator bitmask (mjOption):
+    #   bit 0 (value 1) → disable group 0  (position servos)
+    #   bit 1 (value 2) → disable group 1  (motor torque actuators)
+    _DIS_SERVOS = 1   # 0b01
+    _DIS_MOTORS = 2   # 0b10
+
+    home_q = np.array(cfg["robot"]["home_q"])
+
+    print(f"[sim] model: {model_path.name}  ndof={ndof}  motor_start={motor_start}")
     print(f"[sim] physics dt={physics_dt*1e3:.1f}ms  "
           f"state pub @ {cfg['sim']['state_hz']}Hz")
     print(f"[sim] PUB {cfg['zmq']['state_pub_addr']}  "
           f"PULL {cfg['zmq']['cmd_pull_addr']}")
-    print(f"[sim] modes: torque | position (internal PD kp={servo_kp}) | kinematic")
+    print(f"[sim] modes: torque (motors {motor_start}..{motor_start+ndof-1}) | "
+          f"position (servos 0..{ndof-1}) | kinematic")
 
-    # Last received command — persists across physics steps
-    last_cmd: CommandMsg = CommandMsg(values=[0.0] * ndof, mode=MODE_TORQUE)
+    # Start in position mode holding home so the arm is stable before any
+    # external controller connects.
+    last_cmd: CommandMsg = CommandMsg(values=home_q.tolist(), mode=MODE_POSITION)
 
     def _apply_command() -> None:
         """Apply last_cmd to the simulation."""
@@ -107,26 +118,26 @@ def run(render: bool, cfg: dict) -> None:
         mode = last_cmd.mode
 
         if mode == MODE_TORQUE:
-            # Direct torque: clip to actuator limits and write to ctrl
+            # Disable group 0 (position servos) — zero force, no computation.
+            # Enable group 1 (motors) and write desired torques.
+            model.opt.disableactuator = _DIS_SERVOS
+            np.clip(vals, model.actuator_ctrlrange[motor_start:motor_start+ndof, 0],
+                    model.actuator_ctrlrange[motor_start:motor_start+ndof, 1], out=vals)
+            data.ctrl[motor_start:motor_start + ndof] = vals
+
+        elif mode == MODE_POSITION:
+            # Disable group 1 (motors) — zero force.
+            # Enable group 0 (position servos) and write desired joint positions.
+            model.opt.disableactuator = _DIS_MOTORS
             np.clip(vals, model.actuator_ctrlrange[:ndof, 0],
                     model.actuator_ctrlrange[:ndof, 1], out=vals)
             data.ctrl[:ndof] = vals
 
-        elif mode == MODE_POSITION:
-            # Internal PD servo running at physics rate
-            # τ = Kp*(q_des - q) + Kd*(0 - qd)  — zero desired velocity
-            q  = data.qpos[:ndof]
-            qd = data.qvel[:ndof]
-            torques = servo_kp * (vals - q) + servo_kd * (0.0 - qd)
-            np.clip(torques, model.actuator_ctrlrange[:ndof, 0],
-                    model.actuator_ctrlrange[:ndof, 1], out=torques)
-            data.ctrl[:ndof] = torques
-
         elif mode == MODE_KINEMATIC:
-            # Bypass physics: teleport joints, zero velocity, forward kinematics
+            # Disable both groups — bypass physics entirely.
+            model.opt.disableactuator = _DIS_SERVOS | _DIS_MOTORS
             data.qpos[:ndof] = vals
             data.qvel[:ndof] = 0.0
-            # Skip mj_step below — caller checks this flag
         else:
             print(f"[sim] unknown mode '{mode}', ignoring")
 

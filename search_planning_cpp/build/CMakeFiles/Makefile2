@@ -63,24 +63,19 @@ CMAKE_BINARY_DIR = /home/deepak/Data/planning/search_planning_cpp/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/planning_core.dir/all
-all: CMakeFiles/run_astar.dir/all
-all: _deps/matplotlibcpp-build/all
+all: CMakeFiles/astar.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/planning_core.dir/codegen
-codegen: CMakeFiles/run_astar.dir/codegen
-codegen: _deps/matplotlibcpp-build/codegen
+codegen: CMakeFiles/astar.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
-preinstall: _deps/matplotlibcpp-build/preinstall
+preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/planning_core.dir/clean
-clean: CMakeFiles/run_astar.dir/clean
+clean: CMakeFiles/astar.dir/clean
 clean: _deps/matplotlibcpp-build/clean
 .PHONY : clean
 
@@ -149,68 +144,36 @@ _deps/matplotlibcpp-build/clean: _deps/matplotlibcpp-build/CMakeFiles/spy.dir/cl
 .PHONY : _deps/matplotlibcpp-build/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/planning_core.dir
+# Target rules for target CMakeFiles/astar.dir
 
 # All Build rule for target.
-CMakeFiles/planning_core.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=23,24,25 "Built target planning_core"
-.PHONY : CMakeFiles/planning_core.dir/all
+CMakeFiles/astar.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=3,4 "Built target astar"
+.PHONY : CMakeFiles/astar.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/planning_core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/planning_core.dir/all
+CMakeFiles/astar.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/astar.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles 0
-.PHONY : CMakeFiles/planning_core.dir/rule
+.PHONY : CMakeFiles/astar.dir/rule
 
 # Convenience name for target.
-planning_core: CMakeFiles/planning_core.dir/rule
-.PHONY : planning_core
+astar: CMakeFiles/astar.dir/rule
+.PHONY : astar
 
 # codegen rule for target.
-CMakeFiles/planning_core.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=23,24,25 "Finished codegen for target planning_core"
-.PHONY : CMakeFiles/planning_core.dir/codegen
+CMakeFiles/astar.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=3,4 "Finished codegen for target astar"
+.PHONY : CMakeFiles/astar.dir/codegen
 
 # clean rule for target.
-CMakeFiles/planning_core.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/planning_core.dir/build.make CMakeFiles/planning_core.dir/clean
-.PHONY : CMakeFiles/planning_core.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/run_astar.dir
-
-# All Build rule for target.
-CMakeFiles/run_astar.dir/all: CMakeFiles/planning_core.dir/all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=26,27,28 "Built target run_astar"
-.PHONY : CMakeFiles/run_astar.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/run_astar.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles 6
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/run_astar.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles 0
-.PHONY : CMakeFiles/run_astar.dir/rule
-
-# Convenience name for target.
-run_astar: CMakeFiles/run_astar.dir/rule
-.PHONY : run_astar
-
-# codegen rule for target.
-CMakeFiles/run_astar.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=26,27,28 "Finished codegen for target run_astar"
-.PHONY : CMakeFiles/run_astar.dir/codegen
-
-# clean rule for target.
-CMakeFiles/run_astar.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/run_astar.dir/build.make CMakeFiles/run_astar.dir/clean
-.PHONY : CMakeFiles/run_astar.dir/clean
+CMakeFiles/astar.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/astar.dir/build.make CMakeFiles/astar.dir/clean
+.PHONY : CMakeFiles/astar.dir/clean
 
 #=============================================================================
 # Target rules for target _deps/matplotlibcpp-build/CMakeFiles/minimal.dir
@@ -219,7 +182,7 @@ CMakeFiles/run_astar.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=17,18 "Built target minimal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=19,20 "Built target minimal"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/all
 
 # Build rule for subdir invocation for target.
@@ -236,7 +199,7 @@ minimal: _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=17,18 "Finished codegen for target minimal"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=19,20 "Finished codegen for target minimal"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/codegen
 
 # clean rule for target.
@@ -251,7 +214,7 @@ _deps/matplotlibcpp-build/CMakeFiles/minimal.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/basic.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/basic.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/basic.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/basic.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/basic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=5,6 "Built target basic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=7,8 "Built target basic"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/basic.dir/all
 
 # Build rule for subdir invocation for target.
@@ -268,7 +231,7 @@ basic: _deps/matplotlibcpp-build/CMakeFiles/basic.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/basic.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/basic.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/basic.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=5,6 "Finished codegen for target basic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=7,8 "Finished codegen for target basic"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/basic.dir/codegen
 
 # clean rule for target.
@@ -283,7 +246,7 @@ _deps/matplotlibcpp-build/CMakeFiles/basic.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/modern.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/modern.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/modern.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/modern.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/modern.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=19,20 "Built target modern"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=21,22 "Built target modern"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/modern.dir/all
 
 # Build rule for subdir invocation for target.
@@ -300,7 +263,7 @@ modern: _deps/matplotlibcpp-build/CMakeFiles/modern.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/modern.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/modern.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/modern.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=19,20 "Finished codegen for target modern"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=21,22 "Finished codegen for target modern"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/modern.dir/codegen
 
 # clean rule for target.
@@ -347,7 +310,7 @@ _deps/matplotlibcpp-build/CMakeFiles/animation.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=21,22 "Built target nonblock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=23,24 "Built target nonblock"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -364,7 +327,7 @@ nonblock: _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=21,22 "Finished codegen for target nonblock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=23,24 "Finished codegen for target nonblock"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/codegen
 
 # clean rule for target.
@@ -379,7 +342,7 @@ _deps/matplotlibcpp-build/CMakeFiles/nonblock.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=37,38 "Built target xkcd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=33,34 "Built target xkcd"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/all
 
 # Build rule for subdir invocation for target.
@@ -396,7 +359,7 @@ xkcd: _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=37,38 "Finished codegen for target xkcd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=33,34 "Finished codegen for target xkcd"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/codegen
 
 # clean rule for target.
@@ -411,7 +374,7 @@ _deps/matplotlibcpp-build/CMakeFiles/xkcd.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/bar.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/bar.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/bar.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/bar.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/bar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=3,4 "Built target bar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=5,6 "Built target bar"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/bar.dir/all
 
 # Build rule for subdir invocation for target.
@@ -428,7 +391,7 @@ bar: _deps/matplotlibcpp-build/CMakeFiles/bar.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/bar.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/bar.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/bar.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=3,4 "Finished codegen for target bar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=5,6 "Finished codegen for target bar"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/bar.dir/codegen
 
 # clean rule for target.
@@ -443,7 +406,7 @@ _deps/matplotlibcpp-build/CMakeFiles/bar.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=13,14 "Built target fill_inbetween"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=15,16 "Built target fill_inbetween"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/all
 
 # Build rule for subdir invocation for target.
@@ -460,7 +423,7 @@ fill_inbetween: _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=13,14 "Finished codegen for target fill_inbetween"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=15,16 "Finished codegen for target fill_inbetween"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/codegen
 
 # clean rule for target.
@@ -475,7 +438,7 @@ _deps/matplotlibcpp-build/CMakeFiles/fill_inbetween.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/fill.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/fill.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/fill.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/fill.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/fill.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=11,12 "Built target fill"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=13,14 "Built target fill"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/fill.dir/all
 
 # Build rule for subdir invocation for target.
@@ -492,7 +455,7 @@ fill: _deps/matplotlibcpp-build/CMakeFiles/fill.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/fill.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/fill.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/fill.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=11,12 "Finished codegen for target fill"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=13,14 "Finished codegen for target fill"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/fill.dir/codegen
 
 # clean rule for target.
@@ -507,7 +470,7 @@ _deps/matplotlibcpp-build/CMakeFiles/fill.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/update.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/update.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/update.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/update.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/update.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=35,36 "Built target update"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=31,32 "Built target update"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/update.dir/all
 
 # Build rule for subdir invocation for target.
@@ -524,7 +487,7 @@ update: _deps/matplotlibcpp-build/CMakeFiles/update.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/update.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/update.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/update.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=35,36 "Finished codegen for target update"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=31,32 "Finished codegen for target update"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/update.dir/codegen
 
 # clean rule for target.
@@ -539,7 +502,7 @@ _deps/matplotlibcpp-build/CMakeFiles/update.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=31,32 "Built target subplot2grid"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=27,28 "Built target subplot2grid"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/all
 
 # Build rule for subdir invocation for target.
@@ -556,7 +519,7 @@ subplot2grid: _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=31,32 "Finished codegen for target subplot2grid"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=27,28 "Finished codegen for target subplot2grid"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/codegen
 
 # clean rule for target.
@@ -571,7 +534,7 @@ _deps/matplotlibcpp-build/CMakeFiles/subplot2grid.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=15,16 "Built target lines3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=17,18 "Built target lines3d"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/all
 
 # Build rule for subdir invocation for target.
@@ -588,7 +551,7 @@ lines3d: _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=15,16 "Finished codegen for target lines3d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=17,18 "Finished codegen for target lines3d"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/codegen
 
 # clean rule for target.
@@ -603,7 +566,7 @@ _deps/matplotlibcpp-build/CMakeFiles/lines3d.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/surface.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/surface.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/surface.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/surface.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/surface.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=33,34 "Built target surface"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=29,30 "Built target surface"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/surface.dir/all
 
 # Build rule for subdir invocation for target.
@@ -620,7 +583,7 @@ surface: _deps/matplotlibcpp-build/CMakeFiles/surface.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/surface.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/surface.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/surface.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=33,34 "Finished codegen for target surface"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=29,30 "Finished codegen for target surface"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/surface.dir/codegen
 
 # clean rule for target.
@@ -635,7 +598,7 @@ _deps/matplotlibcpp-build/CMakeFiles/surface.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=7,8 "Built target colorbar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=9,10 "Built target colorbar"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/all
 
 # Build rule for subdir invocation for target.
@@ -652,7 +615,7 @@ colorbar: _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=7,8 "Finished codegen for target colorbar"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=9,10 "Finished codegen for target colorbar"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/codegen
 
 # clean rule for target.
@@ -667,7 +630,7 @@ _deps/matplotlibcpp-build/CMakeFiles/colorbar.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/contour.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/contour.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/contour.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/contour.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/contour.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=9,10 "Built target contour"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=11,12 "Built target contour"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/contour.dir/all
 
 # Build rule for subdir invocation for target.
@@ -684,7 +647,7 @@ contour: _deps/matplotlibcpp-build/CMakeFiles/contour.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/contour.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/contour.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/contour.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=9,10 "Finished codegen for target contour"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=11,12 "Finished codegen for target contour"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/contour.dir/codegen
 
 # clean rule for target.
@@ -699,7 +662,7 @@ _deps/matplotlibcpp-build/CMakeFiles/contour.dir/clean:
 _deps/matplotlibcpp-build/CMakeFiles/spy.dir/all:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/spy.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/spy.dir/depend
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/spy.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/spy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=29,30 "Built target spy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=25,26 "Built target spy"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/spy.dir/all
 
 # Build rule for subdir invocation for target.
@@ -716,7 +679,7 @@ spy: _deps/matplotlibcpp-build/CMakeFiles/spy.dir/rule
 # codegen rule for target.
 _deps/matplotlibcpp-build/CMakeFiles/spy.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f _deps/matplotlibcpp-build/CMakeFiles/spy.dir/build.make _deps/matplotlibcpp-build/CMakeFiles/spy.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=29,30 "Finished codegen for target spy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/deepak/Data/planning/search_planning_cpp/build/CMakeFiles --progress-num=25,26 "Finished codegen for target spy"
 .PHONY : _deps/matplotlibcpp-build/CMakeFiles/spy.dir/codegen
 
 # clean rule for target.

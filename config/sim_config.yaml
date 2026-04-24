@@ -5,12 +5,6 @@ sim:
   realtime: true        # throttle sim to wall-clock speed
   state_hz: 100         # state publish rate [Hz]
 
-  # Internal PD gains used inside the sim when cmd mode = "position".
-  # These run at full physics rate (500 Hz) so they can be much stiffer
-  # than the external controller gains below.
-  position_servo:
-    kp: [4500.0, 4500.0, 3500.0, 3500.0, 2000.0, 2000.0, 2000.0]
-    kd: [450.0,  450.0,  350.0,  350.0,  200.0,  200.0,  200.0]
 
 zmq:
   # Bind addresses (used by the sim process)

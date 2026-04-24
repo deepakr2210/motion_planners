@@ -5,7 +5,10 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/usr/include/eigen3",
-                "/home/deepak/Data/planning/.venv/lib/python3.11/site-packages/mujoco/include"
+                "/home/deepak/Data/planning/.venv/lib/python3.11/site-packages/mujoco/include",
+                "/home/deepak/Data/planning/search_planning_cpp/Search_2D",
+                "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-src",
+                "/usr/include/python3.10"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/g++",

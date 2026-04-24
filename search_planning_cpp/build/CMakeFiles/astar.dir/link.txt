@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/astar.dir/Search_2D/astar.cpp.o -o astar  /usr/lib/x86_64-linux-gnu/libpython3.10.so
