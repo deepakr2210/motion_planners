@@ -7,7 +7,11 @@
       "WebSearch",
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(ls /home/deepak/Data/planning/assets/franka_panda/*.xml)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(grep -E \"\\\\.py$\")",
+      "Bash(cmake -B build -DCMAKE_BUILD_TYPE=Release)",
+      "Bash(python3.10 -c ' *)",
+      "Bash(ldd /home/deepak/Data/planning/search_planning_cpp/build/run_astar)"
     ],
     "additionalDirectories": [
       "/home/deepak/Data/planning/go2_ilqr/models",

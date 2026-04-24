@@ -59,10 +59,8 @@ def main() -> None:
     rate_hz = cfg["diff_ik_control"].get("rate_hz", 100)
     rate_dt = 1.0 / rate_hz
 
-    # q_cmd is the integrated command — never reset from state.
-    # Integrating from q_actual would cause the arm to chase itself if it
-    # starts falling before the first command is processed.
-    q_cmd = np.array(cfg["robot"]["home_q"], dtype=float)
+    # q_cmd is snapshotted from the first state message, then integrated open-loop.
+    q_cmd: np.ndarray | None = None
     v_cmd = np.zeros(6)
 
     print(f"[test_diff_ik] running at {rate_hz} Hz")
@@ -73,14 +71,17 @@ def main() -> None:
 
         if state_sub in socks:
             _, raw = state_sub.recv_multipart()
-            decode_state(raw)   # drain — state available here for monitoring if needed
+            state = decode_state(raw)
+            if q_cmd is None:
+                q_cmd = np.array(state.q, dtype=float)
+                print("[test_diff_ik] initialised q_cmd from state snapshot")
 
         if twist_sub in socks:
             _, raw = twist_sub.recv_multipart()
             v_cmd = np.array(decode_twist(raw).twist)
 
         now = time.monotonic()
-        if now >= t_next:
+        if q_cmd is not None and now >= t_next:
             t_next = now + rate_dt
             q_cmd, _ = controller.execute(q_cmd, v_cmd)
             cmd   = CommandMsg(values=q_cmd.tolist(), mode=MODE_POSITION)

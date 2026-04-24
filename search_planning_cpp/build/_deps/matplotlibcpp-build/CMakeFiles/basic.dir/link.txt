@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/basic.dir/examples/basic.cpp.o -o ../../bin/basic  /usr/lib/x86_64-linux-gnu/libpython3.10.so

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <optional>
 #include <cmath>
 #include <chrono>
 #include <thread>
@@ -24,8 +25,6 @@ int main(int argc, char** argv)
     const double      dt         = cfg["diff_ik_control"]["dt"].as<double>();
     const double      rate_hz    = cfg["diff_ik_control"]["rate_hz"] ?
                                    cfg["diff_ik_control"]["rate_hz"].as<double>() : 100.0;
-    const std::vector<double> home_q =
-        cfg["robot"]["home_q"].as<std::vector<double>>();
 
     // Load MuJoCo model
     char err[1000];
@@ -54,7 +53,7 @@ int main(int argc, char** argv)
         { twist_sub, 0, ZMQ_POLLIN, 0 },
     };
 
-    std::vector<double> q_cmd = home_q;
+    std::optional<std::vector<double>> q_cmd;   // snapshotted from first state message
     std::vector<double> v_cmd(6, 0.0);
 
     const auto rate_ns = std::chrono::nanoseconds(static_cast<long>(1e9 / rate_hz));
@@ -69,7 +68,11 @@ int main(int argc, char** argv)
             zmq::message_t topic, payload;
             state_sub.recv(topic);
             state_sub.recv(payload);
-            // state available here for monitoring — not used for integration
+            if (!q_cmd.has_value()) {
+                auto j = json::parse(payload.to_string_view());
+                q_cmd  = j["q"].get<std::vector<double>>();
+                std::cout << "[diff_ik] initialised q_cmd from state snapshot\n";
+            }
         }
 
         if (items[1].revents & ZMQ_POLLIN) {
@@ -81,13 +84,13 @@ int main(int argc, char** argv)
         }
 
         auto now = std::chrono::steady_clock::now();
-        if (now >= t_next) {
+        if (q_cmd.has_value() && now >= t_next) {
             t_next += rate_ns;
 
-            q_cmd = controller.execute(q_cmd, v_cmd);
+            q_cmd = controller.execute(*q_cmd, v_cmd);
 
             json cmd;
-            cmd["values"]    = q_cmd;
+            cmd["values"]    = *q_cmd;
             cmd["mode"]      = "position";
             cmd["wall_time"] = 0.0;
 

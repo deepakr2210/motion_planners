@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/subplot2grid.dir/examples/subplot2grid.cpp.o -o ../../bin/subplot2grid  /usr/lib/x86_64-linux-gnu/libpython3.10.so

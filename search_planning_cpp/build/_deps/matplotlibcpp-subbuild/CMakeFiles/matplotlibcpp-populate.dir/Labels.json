@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/CMakeFiles/matplotlibcpp-populate"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/CMakeFiles/matplotlibcpp-populate.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/CMakeFiles/matplotlibcpp-populate-complete.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-build.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-configure.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-download.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-install.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-mkdir.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-patch.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-test.rule"
+		},
+		{
+			"file" : "/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-subbuild/matplotlibcpp-populate-prefix/src/matplotlibcpp-populate-stamp/matplotlibcpp-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"matplotlibcpp-populate"
+		],
+		"name" : "matplotlibcpp-populate"
+	}
+}

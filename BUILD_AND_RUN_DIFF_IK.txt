@@ -1,0 +1,197 @@
+================================================================================
+  BUILD & RUN: cpp_diff_ik + Full MuJoCo Sim
+  File: control/cpp/src/run_diff_ik_control.cpp
+================================================================================
+
+OVERVIEW
+--------
+This stack requires 3 terminals running simultaneously:
+  Terminal 1 — MuJoCo sim (publishes STATE on :5555, pulls CMD on :5556)
+  Terminal 2 — C++ diff IK controller (subscribes STATE+TWIST, pushes CMD)
+  Terminal 3 — Twist publisher (publishes TWIST on :5558 to drive the EE)
+
+ZMQ data flow:
+  sim ──(STATE:5555)──► diff_ik_ctrl ──(CMD:5556)──► sim
+  twist_publisher ──(TWIST:5558)──► diff_ik_ctrl
+
+
+================================================================================
+  STEP 0 — ONE-TIME SETUP
+================================================================================
+
+0a. Install system dependencies
+--------------------------------
+  sudo apt update
+  sudo apt install -y build-essential cmake pkg-config libzmq3-dev libeigen3-dev
+
+  (also available via the project script)
+  bash scripts/setup_cpp_deps.sh
+
+
+0b. Create Python virtual environment and install Python deps
+--------------------------------------------------------------
+  cd /home/deepak/Data/planning
+
+  # Install uv if not already available
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+
+  # Sync Python dependencies (creates .venv automatically)
+  uv sync
+
+
+================================================================================
+  STEP 1 — FIX CMakeLists.txt (REQUIRED — one-time)
+================================================================================
+
+The control/cpp/CMakeLists.txt references src/main.cpp but the source file is
+named src/run_diff_ik_control.cpp.  Edit line 68:
+
+  BEFORE:  add_executable(cpp_diff_ik src/main.cpp)
+  AFTER:   add_executable(cpp_diff_ik src/run_diff_ik_control.cpp)
+
+  sed -i 's|src/main.cpp|src/run_diff_ik_control.cpp|' control/cpp/CMakeLists.txt
+
+
+================================================================================
+  STEP 2 — BUILD THE C++ DIFF IK CONTROLLER
+================================================================================
+
+Run from the project root (/home/deepak/Data/planning):
+
+  # Activate the Python venv so CMake can locate libmujoco via the Python package
+  source .venv/bin/activate
+
+  # Configure (only needed once, or after changing CMakeLists.txt)
+  mkdir -p build
+  cd build
+  cmake .. -DCMAKE_BUILD_TYPE=Release
+  cd ..
+
+  # Compile (run this after any source changes)
+  cmake --build build --target cpp_diff_ik -j$(nproc)
+
+The binary will be at:
+  build/control/cpp/cpp_diff_ik
+
+
+================================================================================
+  STEP 3 — LAUNCH THE FULL STACK (3 terminals)
+================================================================================
+
+All commands run from the project root: /home/deepak/Data/planning
+
+------------------------------------------------------------
+TERMINAL 1 — MuJoCo Simulation
+------------------------------------------------------------
+
+  # With rendering (opens a viewer window)
+  uv run python -m sim.mujoco_sim
+
+  # Headless (no window, useful for remote/SSH)
+  uv run python -m sim.mujoco_sim --no-render
+
+  Expected output:
+    [sim] loaded scenes/panda_base.xml
+    [sim] state PUB  tcp://*:5555
+    [sim] cmd  PULL  tcp://*:5556
+    [sim] running at 500 Hz (state pub 100 Hz)
+
+  Wait ~1-2 seconds for sockets to bind before starting Terminal 2.
+
+------------------------------------------------------------
+TERMINAL 2 — C++ Diff IK Controller
+------------------------------------------------------------
+
+  # Make sure the venv is active so the MuJoCo shared lib is on the rpath
+  source .venv/bin/activate
+
+  # Run with default config
+  ./build/control/cpp/cpp_diff_ik config/sim_config.yaml
+
+  # Or let it default to config/sim_config.yaml automatically
+  ./build/control/cpp/cpp_diff_ik
+
+  Expected output:
+    [diff_ik] running at 100.0 Hz
+    [diff_ik] initialised q_cmd from state snapshot   ← appears after first STATE msg
+
+  Key config values used (from config/sim_config.yaml):
+    robot.robot_path    = assets/mujoco_menagerie/franka_emika_panda/panda.xml
+    robot.ndof          = 7
+    diff_ik_control.dt  = 0.01
+    zmq.state_sub_addr  = tcp://localhost:5555
+    zmq.twist_sub_addr  = tcp://localhost:5558
+    zmq.cmd_push_addr   = tcp://localhost:5556
+
+------------------------------------------------------------
+TERMINAL 3 — Twist Publisher (sends EE velocity commands)
+------------------------------------------------------------
+
+  # Draw a horizontal circle (default mode)
+  uv run python tasks/draw_circle.py
+
+  # Linear constant twist
+  uv run python tasks/draw_circle.py --mode linear
+
+  Expected output:
+    [twist] publishing TWIST on tcp://*:5558
+    [twist] mode=circle  radius=0.05  omega=0.5 rad/s
+
+  The diff IK controller picks up TWIST messages and moves the end-effector.
+  Without a twist publisher, the robot holds its current joint configuration.
+
+
+================================================================================
+  QUICK-REFERENCE: SINGLE COMMAND PER TERMINAL
+================================================================================
+
+  T1:  uv run python -m sim.mujoco_sim
+  T2:  source .venv/bin/activate && ./build/control/cpp/cpp_diff_ik config/sim_config.yaml
+  T3:  uv run python tasks/draw_circle.py
+
+
+================================================================================
+  REBUILDING AFTER SOURCE CHANGES
+================================================================================
+
+  cmake --build build --target cpp_diff_ik -j$(nproc)
+
+  (No need to re-run cmake .. unless CMakeLists.txt changed.)
+
+
+================================================================================
+  TROUBLESHOOTING
+================================================================================
+
+Error: "model load failed"
+  → Check that assets/mujoco_menagerie/franka_emika_panda/panda.xml exists.
+    Run:  git submodule update --init --recursive
+
+Error: "Could not locate the mujoco Python package"
+  → Activate the venv before running cmake:  source .venv/bin/activate
+
+Error: "libmujoco.so: cannot open shared object file"
+  → The BUILD_RPATH is set to the venv mujoco package dir automatically.
+    Ensure the venv exists:  uv sync
+
+Controller stays still (no motion)
+  → Terminal 3 (twist publisher) must be running to send TWIST messages.
+    Check ZMQ ports in config/sim_config.yaml match between all three processes.
+
+"initialised q_cmd" never prints in Terminal 2
+  → Terminal 1 (sim) must be running first and publishing STATE on :5555.
+
+
+================================================================================
+  CONFIG FILE REFERENCE: config/sim_config.yaml
+================================================================================
+
+  robot.robot_path     path to the Panda MJCF model
+  robot.ndof           7 (Franka Panda DOF)
+  diff_ik_control.dt   integration timestep for IK (0.01 s)
+  diff_ik_control.rate_hz  control loop rate (default 100 Hz if omitted)
+  zmq.state_sub_addr   address the controller subscribes to for joint state
+  zmq.twist_sub_addr   address the controller subscribes to for EE twist
+  zmq.cmd_push_addr    address the controller pushes joint position commands to
+
+================================================================================

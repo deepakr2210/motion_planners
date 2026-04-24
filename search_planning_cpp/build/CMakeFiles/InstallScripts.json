@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/deepak/Data/planning/search_planning_cpp/build/cmake_install.cmake",
+		"/home/deepak/Data/planning/search_planning_cpp/build/_deps/matplotlibcpp-build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

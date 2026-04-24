@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/surface.dir/examples/surface.cpp.o -o ../../bin/surface  /usr/lib/x86_64-linux-gnu/libpython3.10.so
